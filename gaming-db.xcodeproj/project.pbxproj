@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		E509EA212971632E00CCCFBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA202971632E00CCCFBA /* AppDelegate.swift */; };
-		E509EA252971632E00CCCFBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA242971632E00CCCFBA /* ViewController.swift */; };
+		E509EA252971632E00CCCFBA /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA242971632E00CCCFBA /* MainVC.swift */; };
 		E509EA282971632E00CCCFBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E509EA262971632E00CCCFBA /* Main.storyboard */; };
 		E509EA2A2971632F00CCCFBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E509EA292971632F00CCCFBA /* Assets.xcassets */; };
 		E509EA2D2971632F00CCCFBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E509EA2B2971632F00CCCFBA /* LaunchScreen.storyboard */; };
+		E509EA35297165D900CCCFBA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA34297165D900CCCFBA /* Constants.swift */; };
+		E509EA3829719B0E00CCCFBA /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA3729719B0E00CCCFBA /* FavoritesVC.swift */; };
+		E509EA3A29719B1D00CCCFBA /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA3929719B1D00CCCFBA /* NotesVC.swift */; };
+		E509EA3E2971AF8800CCCFBA /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA3D2971AF8800CCCFBA /* DetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E509EA1D2971632E00CCCFBA /* gaming-db.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gaming-db.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E509EA202971632E00CCCFBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E509EA242971632E00CCCFBA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E509EA242971632E00CCCFBA /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		E509EA272971632E00CCCFBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E509EA292971632F00CCCFBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E509EA2C2971632F00CCCFBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E509EA2E2971632F00CCCFBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E509EA34297165D900CCCFBA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E509EA3729719B0E00CCCFBA /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
+		E509EA3929719B1D00CCCFBA /* NotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
+		E509EA3D2971AF8800CCCFBA /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,26 @@
 		E509EA1F2971632E00CCCFBA /* gaming-db */ = {
 			isa = PBXGroup;
 			children = (
+				E509EA3629719AE700CCCFBA /* ViewControllers */,
 				E509EA202971632E00CCCFBA /* AppDelegate.swift */,
-				E509EA242971632E00CCCFBA /* ViewController.swift */,
+				E509EA34297165D900CCCFBA /* Constants.swift */,
 				E509EA262971632E00CCCFBA /* Main.storyboard */,
 				E509EA292971632F00CCCFBA /* Assets.xcassets */,
 				E509EA2B2971632F00CCCFBA /* LaunchScreen.storyboard */,
 				E509EA2E2971632F00CCCFBA /* Info.plist */,
 			);
 			path = "gaming-db";
+			sourceTree = "<group>";
+		};
+		E509EA3629719AE700CCCFBA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E509EA242971632E00CCCFBA /* MainVC.swift */,
+				E509EA3729719B0E00CCCFBA /* FavoritesVC.swift */,
+				E509EA3929719B1D00CCCFBA /* NotesVC.swift */,
+				E509EA3D2971AF8800CCCFBA /* DetailsVC.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +155,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E509EA252971632E00CCCFBA /* ViewController.swift in Sources */,
+				E509EA3A29719B1D00CCCFBA /* NotesVC.swift in Sources */,
+				E509EA3E2971AF8800CCCFBA /* DetailsVC.swift in Sources */,
+				E509EA252971632E00CCCFBA /* MainVC.swift in Sources */,
+				E509EA3829719B0E00CCCFBA /* FavoritesVC.swift in Sources */,
 				E509EA212971632E00CCCFBA /* AppDelegate.swift in Sources */,
+				E509EA35297165D900CCCFBA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
