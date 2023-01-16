@@ -16,6 +16,9 @@
 		E509EA3829719B0E00CCCFBA /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA3729719B0E00CCCFBA /* FavoritesVC.swift */; };
 		E509EA3A29719B1D00CCCFBA /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA3929719B1D00CCCFBA /* NotesVC.swift */; };
 		E509EA3E2971AF8800CCCFBA /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA3D2971AF8800CCCFBA /* DetailsVC.swift */; };
+		E509EA4129753C0800CCCFBA /* gaming-db.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E509EA3F29753C0800CCCFBA /* gaming-db.xcdatamodeld */; };
+		E509EA4429753CB700CCCFBA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA4329753CB700CCCFBA /* CoreDataManager.swift */; };
+		E509EA4629753CD800CCCFBA /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA4529753CD800CCCFBA /* LocalNotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		E509EA3729719B0E00CCCFBA /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		E509EA3929719B1D00CCCFBA /* NotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
 		E509EA3D2971AF8800CCCFBA /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		E509EA4029753C0800CCCFBA /* gaming-db.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "gaming-db.xcdatamodel"; sourceTree = "<group>"; };
+		E509EA4329753CB700CCCFBA /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		E509EA4529753CD800CCCFBA /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 		E509EA1F2971632E00CCCFBA /* gaming-db */ = {
 			isa = PBXGroup;
 			children = (
+				E509EA4229753CAA00CCCFBA /* Managers */,
 				E509EA3629719AE700CCCFBA /* ViewControllers */,
 				E509EA202971632E00CCCFBA /* AppDelegate.swift */,
 				E509EA34297165D900CCCFBA /* Constants.swift */,
@@ -69,6 +76,7 @@
 				E509EA292971632F00CCCFBA /* Assets.xcassets */,
 				E509EA2B2971632F00CCCFBA /* LaunchScreen.storyboard */,
 				E509EA2E2971632F00CCCFBA /* Info.plist */,
+				E509EA3F29753C0800CCCFBA /* gaming-db.xcdatamodeld */,
 			);
 			path = "gaming-db";
 			sourceTree = "<group>";
@@ -82,6 +90,15 @@
 				E509EA3D2971AF8800CCCFBA /* DetailsVC.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E509EA4229753CAA00CCCFBA /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E509EA4329753CB700CCCFBA /* CoreDataManager.swift */,
+				E509EA4529753CD800CCCFBA /* LocalNotificationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,10 +173,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E509EA3A29719B1D00CCCFBA /* NotesVC.swift in Sources */,
+				E509EA4129753C0800CCCFBA /* gaming-db.xcdatamodeld in Sources */,
 				E509EA3E2971AF8800CCCFBA /* DetailsVC.swift in Sources */,
 				E509EA252971632E00CCCFBA /* MainVC.swift in Sources */,
 				E509EA3829719B0E00CCCFBA /* FavoritesVC.swift in Sources */,
 				E509EA212971632E00CCCFBA /* AppDelegate.swift in Sources */,
+				E509EA4629753CD800CCCFBA /* LocalNotificationManager.swift in Sources */,
+				E509EA4429753CB700CCCFBA /* CoreDataManager.swift in Sources */,
 				E509EA35297165D900CCCFBA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +410,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E509EA3F29753C0800CCCFBA /* gaming-db.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E509EA4029753C0800CCCFBA /* gaming-db.xcdatamodel */,
+			);
+			currentVersion = E509EA4029753C0800CCCFBA /* gaming-db.xcdatamodel */;
+			path = "gaming-db.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E509EA152971632E00CCCFBA /* Project object */;
 }

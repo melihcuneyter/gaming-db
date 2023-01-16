@@ -18,5 +18,12 @@ class NotesVC: UIViewController {
     
     private func setupUI() {
         title = "Notes"
+        
+        let addNotesButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addNotesButton(_:)))
+        navigationItem.rightBarButtonItems = [addNotesButton]
+    }
+    
+    @objc func addNotesButton(_ sender: UIBarButtonItem) {
+        
     }
 }
