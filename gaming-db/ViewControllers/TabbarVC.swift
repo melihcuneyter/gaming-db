@@ -14,5 +14,7 @@ class TabbarVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TODO: Add new tabbar icons and animation. Change all font and size, change app name, 
+        
     }
 }

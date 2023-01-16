@@ -20,6 +20,7 @@
 		E509EA4429753CB700CCCFBA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA4329753CB700CCCFBA /* CoreDataManager.swift */; };
 		E509EA4629753CD800CCCFBA /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA4529753CD800CCCFBA /* LocalNotificationManager.swift */; };
 		E509EA4C29754C7B00CCCFBA /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA4B29754C7B00CCCFBA /* TabbarVC.swift */; };
+		E509EA4E29756A0600CCCFBA /* NewNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA4D29756A0600CCCFBA /* NewNoteVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E509EA4329753CB700CCCFBA /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E509EA4529753CD800CCCFBA /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		E509EA4B29754C7B00CCCFBA /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
+		E509EA4D29756A0600CCCFBA /* NewNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +88,11 @@
 		E509EA3629719AE700CCCFBA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E509EA3D2971AF8800CCCFBA /* DetailsVC.swift */,
 				E509EA242971632E00CCCFBA /* FeedVC.swift */,
 				E509EA3729719B0E00CCCFBA /* FavoritesVC.swift */,
+				E509EA4D29756A0600CCCFBA /* NewNoteVC.swift */,
 				E509EA3929719B1D00CCCFBA /* NotesVC.swift */,
-				E509EA3D2971AF8800CCCFBA /* DetailsVC.swift */,
 				E509EA4B29754C7B00CCCFBA /* TabbarVC.swift */,
 			);
 			path = ViewControllers;
@@ -185,6 +188,7 @@
 				E509EA4629753CD800CCCFBA /* LocalNotificationManager.swift in Sources */,
 				E509EA4429753CB700CCCFBA /* CoreDataManager.swift in Sources */,
 				E509EA35297165D900CCCFBA /* Constants.swift in Sources */,
+				E509EA4E29756A0600CCCFBA /* NewNoteVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
