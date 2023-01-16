@@ -21,6 +21,8 @@
 		E509EA4629753CD800CCCFBA /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA4529753CD800CCCFBA /* LocalNotificationManager.swift */; };
 		E509EA4C29754C7B00CCCFBA /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA4B29754C7B00CCCFBA /* TabbarVC.swift */; };
 		E509EA4E29756A0600CCCFBA /* NewNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA4D29756A0600CCCFBA /* NewNoteVC.swift */; };
+		E509EA5129757AF400CCCFBA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E509EA5029757AF400CCCFBA /* Alamofire */; };
+		E509EA5429757B5300CCCFBA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E509EA5329757B5300CCCFBA /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E509EA5429757B5300CCCFBA /* Kingfisher in Frameworks */,
+				E509EA5129757AF400CCCFBA /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +127,10 @@
 			dependencies = (
 			);
 			name = "gaming-db";
+			packageProductDependencies = (
+				E509EA5029757AF400CCCFBA /* Alamofire */,
+				E509EA5329757B5300CCCFBA /* Kingfisher */,
+			);
 			productName = "gaming-db";
 			productReference = E509EA1D2971632E00CCCFBA /* gaming-db.app */;
 			productType = "com.apple.product-type.application";
@@ -151,6 +159,10 @@
 				Base,
 			);
 			mainGroup = E509EA142971632E00CCCFBA;
+			packageReferences = (
+				E509EA4F29757AF400CCCFBA /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E509EA5229757B5300CCCFBA /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = E509EA1E2971632E00CCCFBA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -418,6 +430,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E509EA4F29757AF400CCCFBA /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		E509EA5229757B5300CCCFBA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E509EA5029757AF400CCCFBA /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E509EA4F29757AF400CCCFBA /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		E509EA5329757B5300CCCFBA /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E509EA5229757B5300CCCFBA /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E509EA3F29753C0800CCCFBA /* gaming-db.xcdatamodeld */ = {
