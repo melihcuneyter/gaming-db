@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E509EA212971632E00CCCFBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA202971632E00CCCFBA /* AppDelegate.swift */; };
-		E509EA252971632E00CCCFBA /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA242971632E00CCCFBA /* MainVC.swift */; };
+		E509EA252971632E00CCCFBA /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA242971632E00CCCFBA /* FeedVC.swift */; };
 		E509EA282971632E00CCCFBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E509EA262971632E00CCCFBA /* Main.storyboard */; };
 		E509EA2A2971632F00CCCFBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E509EA292971632F00CCCFBA /* Assets.xcassets */; };
 		E509EA2D2971632F00CCCFBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E509EA2B2971632F00CCCFBA /* LaunchScreen.storyboard */; };
@@ -19,12 +19,13 @@
 		E509EA4129753C0800CCCFBA /* gaming-db.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E509EA3F29753C0800CCCFBA /* gaming-db.xcdatamodeld */; };
 		E509EA4429753CB700CCCFBA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA4329753CB700CCCFBA /* CoreDataManager.swift */; };
 		E509EA4629753CD800CCCFBA /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA4529753CD800CCCFBA /* LocalNotificationManager.swift */; };
+		E509EA4C29754C7B00CCCFBA /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA4B29754C7B00CCCFBA /* TabbarVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E509EA1D2971632E00CCCFBA /* gaming-db.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gaming-db.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E509EA202971632E00CCCFBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E509EA242971632E00CCCFBA /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		E509EA242971632E00CCCFBA /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		E509EA272971632E00CCCFBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E509EA292971632F00CCCFBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E509EA2C2971632F00CCCFBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +37,7 @@
 		E509EA4029753C0800CCCFBA /* gaming-db.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "gaming-db.xcdatamodel"; sourceTree = "<group>"; };
 		E509EA4329753CB700CCCFBA /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E509EA4529753CD800CCCFBA /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		E509EA4B29754C7B00CCCFBA /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,10 +86,11 @@
 		E509EA3629719AE700CCCFBA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E509EA242971632E00CCCFBA /* MainVC.swift */,
+				E509EA242971632E00CCCFBA /* FeedVC.swift */,
 				E509EA3729719B0E00CCCFBA /* FavoritesVC.swift */,
 				E509EA3929719B1D00CCCFBA /* NotesVC.swift */,
 				E509EA3D2971AF8800CCCFBA /* DetailsVC.swift */,
+				E509EA4B29754C7B00CCCFBA /* TabbarVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -175,7 +178,8 @@
 				E509EA3A29719B1D00CCCFBA /* NotesVC.swift in Sources */,
 				E509EA4129753C0800CCCFBA /* gaming-db.xcdatamodeld in Sources */,
 				E509EA3E2971AF8800CCCFBA /* DetailsVC.swift in Sources */,
-				E509EA252971632E00CCCFBA /* MainVC.swift in Sources */,
+				E509EA252971632E00CCCFBA /* FeedVC.swift in Sources */,
+				E509EA4C29754C7B00CCCFBA /* TabbarVC.swift in Sources */,
 				E509EA3829719B0E00CCCFBA /* FavoritesVC.swift in Sources */,
 				E509EA212971632E00CCCFBA /* AppDelegate.swift in Sources */,
 				E509EA4629753CD800CCCFBA /* LocalNotificationManager.swift in Sources */,
@@ -337,7 +341,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -371,7 +375,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

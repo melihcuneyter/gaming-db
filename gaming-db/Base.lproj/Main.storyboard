@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MainVC-->
+        <!--FeedVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="gaming_db" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FeedVC" customModule="gaming_db" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,8 +78,10 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="VDr-ES-eva" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LcB-Be-Opb">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="FqU-o7-Gwl" kind="relationship" relationship="viewControllers" id="9Pu-PW-3c3"/>
@@ -91,11 +93,11 @@
             </objects>
             <point key="canvasLocation" x="654.19847328244271" y="129.57746478873241"/>
         </scene>
-        <!--Item-->
+        <!--Feed-->
         <scene sceneID="iFK-Oz-F3B">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FqU-o7-Gwl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="urP-na-2VJ"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="house" catalog="system" selectedImage="house.fill" id="urP-na-2VJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="SSQ-70-1Zn">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -110,11 +112,11 @@
             </objects>
             <point key="canvasLocation" x="1488" y="-540"/>
         </scene>
-        <!--Item-->
+        <!--Favorites-->
         <scene sceneID="ok2-Eq-ACa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fn0-To-PsV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="EmS-mc-lBE"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart" catalog="system" selectedImage="heart.fill" id="EmS-mc-lBE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Soz-OR-NtJ">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -129,11 +131,11 @@
             </objects>
             <point key="canvasLocation" x="1488" y="130"/>
         </scene>
-        <!--Item-->
+        <!--Notes-->
         <scene sceneID="YJS-fH-0RD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r21-UG-uGx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="BQI-Lx-E7W"/>
+                    <tabBarItem key="tabBarItem" title="Notes" image="text.bubble" catalog="system" selectedImage="text.bubble.fill" id="BQI-Lx-E7W"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="fHb-ou-joO">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -150,6 +152,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="text.bubble" catalog="system" width="128" height="110"/>
+        <image name="text.bubble.fill" catalog="system" width="128" height="110"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
