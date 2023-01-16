@@ -23,6 +23,12 @@
 		E509EA4E29756A0600CCCFBA /* NewNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA4D29756A0600CCCFBA /* NewNoteVC.swift */; };
 		E509EA5129757AF400CCCFBA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E509EA5029757AF400CCCFBA /* Alamofire */; };
 		E509EA5429757B5300CCCFBA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E509EA5329757B5300CCCFBA /* Kingfisher */; };
+		E509EA58297580F900CCCFBA /* FavoriteGameTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA56297580F900CCCFBA /* FavoriteGameTVC.swift */; };
+		E509EA59297580F900CCCFBA /* FavoriteGameTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E509EA57297580F900CCCFBA /* FavoriteGameTVC.xib */; };
+		E58E97FE2975F21000348A25 /* NoteTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58E97FC2975F21000348A25 /* NoteTVC.swift */; };
+		E58E97FF2975F21000348A25 /* NoteTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E58E97FD2975F21000348A25 /* NoteTVC.xib */; };
+		E5DC4D9C2975A6DA00013AEB /* FeedGameCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DC4D9A2975A6DA00013AEB /* FeedGameCVC.swift */; };
+		E5DC4D9D2975A6DA00013AEB /* FeedGameCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5DC4D9B2975A6DA00013AEB /* FeedGameCVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +48,12 @@
 		E509EA4529753CD800CCCFBA /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		E509EA4B29754C7B00CCCFBA /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
 		E509EA4D29756A0600CCCFBA /* NewNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteVC.swift; sourceTree = "<group>"; };
+		E509EA56297580F900CCCFBA /* FavoriteGameTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGameTVC.swift; sourceTree = "<group>"; };
+		E509EA57297580F900CCCFBA /* FavoriteGameTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteGameTVC.xib; sourceTree = "<group>"; };
+		E58E97FC2975F21000348A25 /* NoteTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTVC.swift; sourceTree = "<group>"; };
+		E58E97FD2975F21000348A25 /* NoteTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTVC.xib; sourceTree = "<group>"; };
+		E5DC4D9A2975A6DA00013AEB /* FeedGameCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedGameCVC.swift; sourceTree = "<group>"; };
+		E5DC4D9B2975A6DA00013AEB /* FeedGameCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedGameCVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +88,8 @@
 		E509EA1F2971632E00CCCFBA /* gaming-db */ = {
 			isa = PBXGroup;
 			children = (
+				E509EA5A2975811B00CCCFBA /* CollectionViewCell */,
+				E509EA55297580D000CCCFBA /* TableViewCells */,
 				E509EA4229753CAA00CCCFBA /* Managers */,
 				E509EA3629719AE700CCCFBA /* ViewControllers */,
 				E509EA202971632E00CCCFBA /* AppDelegate.swift */,
@@ -109,6 +123,26 @@
 				E509EA4529753CD800CCCFBA /* LocalNotificationManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		E509EA55297580D000CCCFBA /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				E509EA56297580F900CCCFBA /* FavoriteGameTVC.swift */,
+				E509EA57297580F900CCCFBA /* FavoriteGameTVC.xib */,
+				E58E97FC2975F21000348A25 /* NoteTVC.swift */,
+				E58E97FD2975F21000348A25 /* NoteTVC.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		E509EA5A2975811B00CCCFBA /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E5DC4D9A2975A6DA00013AEB /* FeedGameCVC.swift */,
+				E5DC4D9B2975A6DA00013AEB /* FeedGameCVC.xib */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +214,9 @@
 				E509EA2D2971632F00CCCFBA /* LaunchScreen.storyboard in Resources */,
 				E509EA2A2971632F00CCCFBA /* Assets.xcassets in Resources */,
 				E509EA282971632E00CCCFBA /* Main.storyboard in Resources */,
+				E58E97FF2975F21000348A25 /* NoteTVC.xib in Resources */,
+				E5DC4D9D2975A6DA00013AEB /* FeedGameCVC.xib in Resources */,
+				E509EA59297580F900CCCFBA /* FavoriteGameTVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,10 +230,13 @@
 				E509EA3A29719B1D00CCCFBA /* NotesVC.swift in Sources */,
 				E509EA4129753C0800CCCFBA /* gaming-db.xcdatamodeld in Sources */,
 				E509EA3E2971AF8800CCCFBA /* DetailsVC.swift in Sources */,
+				E58E97FE2975F21000348A25 /* NoteTVC.swift in Sources */,
+				E509EA58297580F900CCCFBA /* FavoriteGameTVC.swift in Sources */,
 				E509EA252971632E00CCCFBA /* FeedVC.swift in Sources */,
 				E509EA4C29754C7B00CCCFBA /* TabbarVC.swift in Sources */,
 				E509EA3829719B0E00CCCFBA /* FavoritesVC.swift in Sources */,
 				E509EA212971632E00CCCFBA /* AppDelegate.swift in Sources */,
+				E5DC4D9C2975A6DA00013AEB /* FeedGameCVC.swift in Sources */,
 				E509EA4629753CD800CCCFBA /* LocalNotificationManager.swift in Sources */,
 				E509EA4429753CB700CCCFBA /* CoreDataManager.swift in Sources */,
 				E509EA35297165D900CCCFBA /* Constants.swift in Sources */,

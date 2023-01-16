@@ -11,12 +11,15 @@ class FavoritesVC: UIViewController {
     
     var searchController = UISearchController()
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
+        
+        tableView.register(.init(nibName: "FavoriteGameTVC", bundle: nil), forCellReuseIdentifier: "FavoriteGameTVC")
         
     }
     
@@ -28,7 +31,8 @@ class FavoritesVC: UIViewController {
         searchController.searchBar.sizeToFit()
         searchController.searchBar.placeholder = "Aramak istediğiniz favori oyunu yazın."
         navigationItem.searchController = searchController
-        
+        // TODO: Searchbar change color and fix animation.
+            
     }
 }
 
@@ -57,13 +61,12 @@ extension FavoritesVC: UITableViewDelegate {
 // MARK: - TableView DataSource
 extension FavoritesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationTVC", for: indexPath)
-//        let weatherDetail = weatherLocations[indexPath.row]
-//        cell.currentWeather = weatherDetail
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteGameTVC", for: indexPath) as! FavoriteGameTVC
+
         return cell
     }
     

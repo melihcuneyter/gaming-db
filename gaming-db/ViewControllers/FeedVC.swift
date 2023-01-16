@@ -11,12 +11,15 @@ class FeedVC: UIViewController {
     
     var searchController = UISearchController()
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
+        
+        collectionView.register(.init(nibName: "FeedGameCVC", bundle: nil), forCellWithReuseIdentifier: "FeedGameCVC")
         
     }
     
@@ -28,6 +31,7 @@ class FeedVC: UIViewController {
         searchController.searchBar.sizeToFit()
         searchController.searchBar.placeholder = "Aramak istediğiniz oyunu yazın."
         navigationItem.searchController = searchController
+        // TODO: Searchbar change color and fix animation.
         
         setupOrderButton()
     }
@@ -59,7 +63,7 @@ class FeedVC: UIViewController {
             print("Remove User action was tapped")
         }
         
-        let menu = UIMenu(title: "ORDER LIST", options: .displayInline, children: [orderItemsName, orderItemsDate, orderItemsRating, orderItemsPopularity])
+        let menu = UIMenu(title: "ORDER BY", options: .displayInline, children: [orderItemsName, orderItemsDate, orderItemsRating, orderItemsPopularity])
         
         orderButton.menu = menu
         orderButton.showsMenuAsPrimaryAction = true
@@ -76,21 +80,26 @@ extension FeedVC: UISearchBarDelegate {
 
 // MARK: - CollectionView Delegate
 extension FeedVC: UICollectionViewDelegate {
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
-    }
+ 
 }
 
 // MARK: - CollectionView Datasource
 extension FeedVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let hourlyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourlyCVC", for: indexPath)
-//        hourlyCell.hourlyWeather = weatherDetail.hourlyWeatherData[indexPath.row]
-        return hourlyCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedGameCVC", for: indexPath) as! FeedGameCVC
+        
+        return cell
+    }
+}
+
+// MARK: - CollectionView - FlowLayoutDelegate
+extension FeedVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: (collectionView.frame.width - 20) / 2, height: (collectionView.frame.height - 20) / 2)
     }
 }
 

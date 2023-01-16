@@ -9,6 +9,7 @@ import UIKit
 
 class NotesVC: UIViewController {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -16,12 +17,15 @@ class NotesVC: UIViewController {
         
         setupUI()
         
+        tableView.register(.init(nibName: "NoteTVC", bundle: nil), forCellReuseIdentifier: "NoteTVC")
+        
     }
     
     private func setupUI() {
         title = "Notes"
         
         setupAddNotesButton()
+        
     }
     
     private func setupAddNotesButton() {
@@ -65,7 +69,7 @@ extension NotesVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationTVC", for: indexPath) 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NoteTVC", for: indexPath) as! NoteTVC
 //        let weatherDetail = weatherLocations[indexPath.row]
 //        cell.currentWeather = weatherDetail
         return cell
