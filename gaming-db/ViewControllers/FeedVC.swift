@@ -14,9 +14,6 @@ class FeedVC: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var games: [GameModel]?
-    private var tempGames: [GameModel]?
-    
     private var viewModel: FeedVCViewModelProtocol = FeedVCViewModel()
     
     override func viewDidLoad() {
@@ -40,7 +37,6 @@ class FeedVC: UIViewController {
     private func setupUI() {
         title = "Feed"
         
-        // MARK: - SearchBar define
         searchController.searchBar.delegate = self
         searchController.searchBar.sizeToFit()
         searchController.searchBar.placeholder = "Aramak istediğiniz oyunu yazın."
@@ -113,18 +109,26 @@ extension FeedVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedGameCVC", for: indexPath) as! FeedGameCVC
-        
-        let showGameForCell = viewModel.getGame(at: indexPath.row)
+        let showCellForGame = viewModel.getGame(at: indexPath.row)
         
         DispatchQueue.main.async {
-            cell.configureCell(showGameForCell!)
+            cell.configureCell(showCellForGame!)
         }
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // TODO: show gamedetail present
+        print("melih", indexPath.row)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let nextPageURL = viewModel.getMoreGame()
+        if indexPath.row == viewModel.getGameCount() - 1 {
+            activityIndicator.startAnimating()
+            viewModel.getMoreGames(nextPageURL: nextPageURL)
+        }
     }
 }
 

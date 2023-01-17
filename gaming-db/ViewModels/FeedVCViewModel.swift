@@ -13,6 +13,8 @@ protocol FeedVCViewModelProtocol {
     func getAllGames()
     func getGameCount() -> Int
     func getGame(at index: Int) -> GameModel?
+    func getMoreGames(nextPageURL: String)
+    func getMoreGame() -> String
 }
 
 protocol FeedVCViewModelDelegate: AnyObject {
@@ -24,6 +26,7 @@ final class FeedVCViewModel: FeedVCViewModelProtocol {
     
     private var games: [GameModel]?
     private var tempGames: [GameModel]?
+    private var nextPageURL: String?
     
     func getAllGames() {
         Services.getAllGames { [weak self] games, error in
@@ -33,8 +36,26 @@ final class FeedVCViewModel: FeedVCViewModelProtocol {
                 self.delegate?.fetchedGames()
                 return
             }
-            self.games = games
-            self.tempGames = games
+            
+            self.nextPageURL = games?.next
+            self.games = games?.results
+            self.tempGames = games?.results
+            self.delegate?.fetchedGames()
+        }
+    }
+    
+    func getMoreGames(nextPageURL: String) {
+        Services.getMoreGames(nextPageURL: nextPageURL) { [weak self] moreGame, error in
+            guard let self = self else { return }
+            if let error = error {
+                NotificationCenter.default.post(name: NSNotification.Name("getMoreGamesErrorMessage"), object: error.localizedDescription)
+                self.delegate?.fetchedGames()
+                return
+            }
+            
+            self.nextPageURL = moreGame!.next
+            self.games?.append(contentsOf: moreGame!.results)
+            self.tempGames?.append(contentsOf: moreGame!.results)
             self.delegate?.fetchedGames()
         }
     }
@@ -45,5 +66,9 @@ final class FeedVCViewModel: FeedVCViewModelProtocol {
     
     func getGame(at index: Int) -> GameModel? {
         games?[index]
+    }
+    
+    func getMoreGame() -> String {
+        nextPageURL!
     }
 }

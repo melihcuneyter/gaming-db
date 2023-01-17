@@ -23,6 +23,11 @@ class FeedGameCVC: UICollectionViewCell {
         super.awakeFromNib()
         
         gameImageView.layer.cornerRadius = 10
+        gameImageView.layer.borderWidth = 1
+        gameImageView.layer.borderColor = .init(red: 255, green: 255, blue: 255, alpha: 1)
+        
+        enablePlatform(id: -1)
+        gameImageView.image = nil
     }
     
     override func prepareForReuse() {
@@ -44,7 +49,7 @@ class FeedGameCVC: UICollectionViewCell {
         }
     }
     
-    // TODO: replace full CVC and functions, and add some information. ADD Another LOGO for platforms..
+    // TODO: replace full CVC and functions, and add some information. ADD Another LOGO for platforms.. ADD ActivityIndicator
     private func gameInfoCreator(_ game: GameModel) -> String{
         let dateString = (game.tba ?? false) ? "TBA" : (game.released?.prefix(4) ?? "TBA")
         var genreString = ""
