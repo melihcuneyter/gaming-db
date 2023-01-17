@@ -14,12 +14,26 @@ class FeedVC: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private var games: [GameModel]?
+    private var tempGames: [GameModel]?
+    
+    private var viewModel: FeedVCViewModelProtocol = FeedVCViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         
         collectionView.register(.init(nibName: "FeedGameCVC", bundle: nil), forCellWithReuseIdentifier: "FeedGameCVC")
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showError),
+                                               name: NSNotification.Name("getAllGamesErrorMessage"),
+                                               object: nil)
+        
+        viewModel.delegate = self
+        activityIndicator.startAnimating()
+        viewModel.getAllGames()
         
     }
     
@@ -43,22 +57,22 @@ class FeedVC: UIViewController {
         orderButton.setBackgroundImage(orderButtonImage, for: .normal)
         orderButton.tintColor = .white
         
-        let orderItemsName = UIAction(title: "Name", image: UIImage(systemName: "person.fill")) { (action) in
+        let orderItemsName = UIAction(title: "Name") { (action) in
             // TODO: order by name and change image
             print("Users action was tapped")
         }
         
-        let orderItemsDate = UIAction(title: "Release Date", image: UIImage(systemName: "person.badge.plus")) { (action) in
+        let orderItemsDate = UIAction(title: "Release Date") { (action) in
             // TODO: order by release date and change image
             print("Add User action was tapped")
         }
         
-        let orderItemsRating = UIAction(title: "Rating", image: UIImage(systemName: "person.fill.xmark.rtl")) { (action) in
+        let orderItemsRating = UIAction(title: "Rating") { (action) in
             // TODO: order by average rating and change image
             print("Remove User action was tapped")
         }
         
-        let orderItemsPopularity = UIAction(title: "Popularity", image: UIImage(systemName: "person.fill.xmark.rtl")) { (action) in
+        let orderItemsPopularity = UIAction(title: "Popularity") { (action) in
             // TODO: order by popularity and change image
             print("Remove User action was tapped")
         }
@@ -69,7 +83,15 @@ class FeedVC: UIViewController {
         orderButton.showsMenuAsPrimaryAction = true
         let rightButton = UIBarButtonItem(customView: orderButton)
         navigationItem.rightBarButtonItem = rightButton
-
+        
+    }
+    
+    @objc func showError(_ notification: Notification) {
+        if let text = notification.object as? String {
+            let alert = UIAlertController(title: NSLocalizedString("ERROR_TITLE", comment: "Error"), message: text, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK_BUTTON", comment: "OK"), style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
 
@@ -80,19 +102,29 @@ extension FeedVC: UISearchBarDelegate {
 
 // MARK: - CollectionView Delegate
 extension FeedVC: UICollectionViewDelegate {
- 
+    
 }
 
 // MARK: - CollectionView Datasource
 extension FeedVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel.getGameCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedGameCVC", for: indexPath) as! FeedGameCVC
         
+        let showGameForCell = viewModel.getGame(at: indexPath.row)
+        
+        DispatchQueue.main.async {
+            cell.configureCell(showGameForCell!)
+        }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO: show gamedetail present
     }
 }
 
@@ -103,3 +135,10 @@ extension FeedVC: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: -  ViewModel Delegate
+extension FeedVC: FeedVCViewModelDelegate {
+    func fetchedGames() {
+        collectionView.reloadData()
+        activityIndicator.stopAnimating()
+    }
+}

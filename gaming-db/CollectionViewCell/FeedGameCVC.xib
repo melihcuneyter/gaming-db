@@ -30,7 +30,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OKB-nl-roh">
-                                <rect key="frame" x="35" y="126" width="160" height="22"/>
+                                <rect key="frame" x="51.666666666666657" y="126" width="127" height="22"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyk-uv-MQl">
                                         <rect key="frame" x="0.0" y="0.0" width="28" height="22"/>
@@ -41,7 +41,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WrT-gp-cbq">
-                                        <rect key="frame" x="33" y="0.0" width="28" height="22"/>
+                                        <rect key="frame" x="33.000000000000007" y="0.0" width="28" height="22"/>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal">
@@ -64,14 +64,6 @@
                                             <imageReference key="image" image="gamecontroller" catalog="system" symbolScale="medium"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="up8-FO-5vb">
-                                        <rect key="frame" x="132" y="0.0" width="28" height="22"/>
-                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal">
-                                            <imageReference key="image" image="gamecontroller" catalog="system" symbolScale="medium"/>
-                                        </state>
-                                    </button>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sr-0g-8HO">
@@ -80,7 +72,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wax-s6-clF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wax-s6-clF">
                                 <rect key="frame" x="8" y="182" width="214" height="15.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
@@ -116,6 +108,10 @@
                 <outlet property="gameDateLabel" destination="Wax-s6-clF" id="AFr-3I-hgm"/>
                 <outlet property="gameImageView" destination="NaP-V1-lQs" id="49A-JH-M6I"/>
                 <outlet property="gameNameLabel" destination="6sr-0g-8HO" id="PVX-aC-kEl"/>
+                <outlet property="nintendoButton" destination="BoU-q4-zMu" id="zl6-a3-RLD"/>
+                <outlet property="pcButton" destination="rt3-fE-xeh" id="yTE-b1-5jv"/>
+                <outlet property="playstationButton" destination="qyk-uv-MQl" id="rJw-RW-nyB"/>
+                <outlet property="xboxButton" destination="WrT-gp-cbq" id="ZIr-4q-Jfw"/>
             </connections>
             <point key="canvasLocation" x="170.99236641221373" y="26.056338028169016"/>
         </collectionViewCell>
