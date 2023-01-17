@@ -49,7 +49,7 @@ class FeedGameCVC: UICollectionViewCell {
         }
     }
     
-    // TODO: replace full CVC and functions, and add some information. ADD Another LOGO for platforms.. ADD ActivityIndicator
+    // TODO: replace full CVC and functions, and add some information. ADD Another LOGO for platforms.. ADD ActivityIndicator, ADD Rating etc.
     private func gameInfoCreator(_ game: GameModel) -> String{
         let dateString = (game.tba ?? false) ? "TBA" : (game.released?.prefix(4) ?? "TBA")
         var genreString = ""
@@ -64,6 +64,7 @@ class FeedGameCVC: UICollectionViewCell {
         return "\(genreString) "
     }
     
+    // TODO: renamed and add platform.
     private func enablePlatform(id:Int){
         switch id {
         case -1:

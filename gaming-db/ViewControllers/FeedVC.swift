@@ -15,6 +15,7 @@ class FeedVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var viewModel: FeedVCViewModelProtocol = FeedVCViewModel()
+    private var orderBy: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,27 +54,26 @@ class FeedVC: UIViewController {
         orderButton.setBackgroundImage(orderButtonImage, for: .normal)
         orderButton.tintColor = .white
         
+        // TODO: backgroundImage OPTIONAL and do code review
         let orderItemsName = UIAction(title: "Name") { (action) in
-            // TODO: order by name and change image
-            print("Users action was tapped")
+            self.orderBy = "-name"
+            self.activityIndicator.startAnimating()
+            self.viewModel.getOrderedGames(orderBy: self.orderBy)
         }
         
         let orderItemsDate = UIAction(title: "Release Date") { (action) in
-            // TODO: order by release date and change image
-            print("Add User action was tapped")
+            self.orderBy = "-released"
+            self.activityIndicator.startAnimating()
+            self.viewModel.getOrderedGames(orderBy: self.orderBy)
         }
         
         let orderItemsRating = UIAction(title: "Rating") { (action) in
-            // TODO: order by average rating and change image
-            print("Remove User action was tapped")
+            self.orderBy = "-rating"
+            self.activityIndicator.startAnimating()
+            self.viewModel.getOrderedGames(orderBy: self.orderBy)
         }
         
-        let orderItemsPopularity = UIAction(title: "Popularity") { (action) in
-            // TODO: order by popularity and change image
-            print("Remove User action was tapped")
-        }
-        
-        let menu = UIMenu(title: "ORDER BY", options: .displayInline, children: [orderItemsName, orderItemsDate, orderItemsRating, orderItemsPopularity])
+        let menu = UIMenu(title: "ORDER BY", options: .displayInline, children: [orderItemsName, orderItemsDate, orderItemsRating])
         
         orderButton.menu = menu
         orderButton.showsMenuAsPrimaryAction = true
