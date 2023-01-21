@@ -40,11 +40,11 @@ class FeedVC: UIViewController {
     }
     
     private func setupUI() {
-        title = "Feed"
+        title = NSLocalizedString("feedVC_title", comment: "")
         
         searchController.searchBar.delegate = self
         searchController.searchBar.sizeToFit()
-        searchController.searchBar.placeholder = "Aramak istediğiniz oyunu yazın."
+        searchController.searchBar.placeholder = NSLocalizedString("feedVC_searchbar", comment: "")
         navigationItem.searchController = searchController
         
         setupGameOrderByButton()
@@ -64,31 +64,31 @@ class FeedVC: UIViewController {
         orderButton.setBackgroundImage(orderButtonImage, for: .normal)
         orderButton.tintColor = .white
         
-        let orderItemsAdded = UIAction(title: "Added") { (action) in
+        let orderItemsAdded = UIAction(title: NSLocalizedString("feedVC_orderByAddedButton", comment: "")) { (action) in
             self.orderBy = "-added"
             self.activityIndicator.startAnimating()
             self.viewModel.getOrderedGames(orderBy: self.orderBy)
         }
         
-        let orderItemsName = UIAction(title: "Name") { (action) in
+        let orderItemsName = UIAction(title: NSLocalizedString("feedVC_orderByNameButton", comment: "")) { (action) in
             self.orderBy = "-name"
             self.activityIndicator.startAnimating()
             self.viewModel.getOrderedGames(orderBy: self.orderBy)
         }
         
-        let orderItemsDate = UIAction(title: "Release Date") { (action) in
+        let orderItemsDate = UIAction(title: NSLocalizedString("feedVC_orderByReleasedButton", comment: "")) { (action) in
             self.orderBy = "-released"
             self.activityIndicator.startAnimating()
             self.viewModel.getOrderedGames(orderBy: self.orderBy)
         }
         
-        let orderItemsRating = UIAction(title: "Rating") { (action) in
+        let orderItemsRating = UIAction(title: NSLocalizedString("feedVC_orderByARatingButton", comment: "")) { (action) in
             self.orderBy = "-rating"
             self.activityIndicator.startAnimating()
             self.viewModel.getOrderedGames(orderBy: self.orderBy)
         }
         
-        let menu = UIMenu(title: "ORDER BY", options: .displayInline, children: [orderItemsRating, orderItemsAdded, orderItemsName, orderItemsDate])
+        let menu = UIMenu(title: NSLocalizedString("feedVC_orderByTitle", comment: ""), options: .displayInline, children: [orderItemsRating, orderItemsAdded, orderItemsName, orderItemsDate])
         
         orderButton.menu = menu
         orderButton.showsMenuAsPrimaryAction = true
@@ -100,8 +100,9 @@ class FeedVC: UIViewController {
     // TODO: fix and update alert
     @objc func showError(_ notification: Notification) {
         if let text = notification.object as? String {
-            let alert = UIAlertController(title: NSLocalizedString("ERROR_TITLE", comment: "Error"), message: text, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK_BUTTON", comment: "OK"), style: UIAlertAction.Style.default, handler: nil))
+            // localized yap
+            let alert = UIAlertController(title: NSLocalizedString("alert_title", comment: "Error"), message: text, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("ok", comment: "OK"), style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }

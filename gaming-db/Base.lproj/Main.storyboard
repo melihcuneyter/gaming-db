@@ -78,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2TL-aP-a4L">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="155" width="393" height="614"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoteTVC" id="xvx-qB-8k8">
@@ -129,13 +129,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Adı (Oyun Adı)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP4-id-bap">
-                                <rect key="frame" x="16" y="91" width="361" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <rect key="frame" x="16" y="91" width="361" height="27.666666666666671"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hTV-PT-ayl">
-                                <rect key="frame" x="16" y="153" width="361" height="573"/>
+                                <rect key="frame" x="16" y="150.66666666666669" width="361" height="575.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -435,10 +435,10 @@
             </objects>
             <point key="canvasLocation" x="3281.679389312977" y="-134.50704225352112"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--TabbarVC-->
         <scene sceneID="N3O-AS-PjD">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="VDr-ES-eva" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="VDr-ES-eva" customClass="TabbarVC" customModule="gaming_db" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LcB-Be-Opb">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -447,6 +447,7 @@
                         <color key="selectedImageTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
+                        <outlet property="tabbar" destination="LcB-Be-Opb" id="aax-b3-66w"/>
                         <segue destination="FqU-o7-Gwl" kind="relationship" relationship="viewControllers" id="9Pu-PW-3c3"/>
                         <segue destination="Fn0-To-PsV" kind="relationship" relationship="viewControllers" id="SRc-Yc-rjs"/>
                         <segue destination="r21-UG-uGx" kind="relationship" relationship="viewControllers" id="Vfd-Rg-3qT"/>
@@ -456,11 +457,11 @@
             </objects>
             <point key="canvasLocation" x="654.19847328244271" y="129.57746478873241"/>
         </scene>
-        <!--Feed-->
+        <!--Navigation Controller-->
         <scene sceneID="iFK-Oz-F3B">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FqU-o7-Gwl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" image="house" catalog="system" selectedImage="house.fill" id="urP-na-2VJ"/>
+                    <tabBarItem key="tabBarItem" title="" image="house" catalog="system" selectedImage="house.fill" id="urP-na-2VJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="SSQ-70-1Zn">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -475,11 +476,11 @@
             </objects>
             <point key="canvasLocation" x="1488" y="-540"/>
         </scene>
-        <!--Favorites-->
+        <!--Navigation Controller-->
         <scene sceneID="ok2-Eq-ACa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fn0-To-PsV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" image="heart" catalog="system" selectedImage="heart.fill" id="EmS-mc-lBE"/>
+                    <tabBarItem key="tabBarItem" title="" image="heart" catalog="system" selectedImage="heart.fill" id="EmS-mc-lBE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Soz-OR-NtJ">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -494,11 +495,11 @@
             </objects>
             <point key="canvasLocation" x="1488" y="130"/>
         </scene>
-        <!--Notes-->
+        <!--Navigation Controller-->
         <scene sceneID="YJS-fH-0RD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r21-UG-uGx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Notes" image="text.bubble" catalog="system" selectedImage="text.bubble.fill" id="BQI-Lx-E7W"/>
+                    <tabBarItem key="tabBarItem" title="" image="text.bubble" catalog="system" selectedImage="text.bubble.fill" id="BQI-Lx-E7W"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="fHb-ou-joO">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>

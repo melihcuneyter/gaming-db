@@ -14,7 +14,9 @@ class TabbarVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: Add new tabbar icons and animation. Change all font and size, change app name, 
+        tabbar.items![0].title = NSLocalizedString("feedVC_title", comment: "")
+        tabbar.items![1].title = NSLocalizedString("favoritesVC_title", comment: "")
+        tabbar.items![2].title = NSLocalizedString("notesVC_title", comment: "")
         
     }
 }

@@ -24,6 +24,7 @@
 		E509EA5429757B5300CCCFBA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E509EA5329757B5300CCCFBA /* Kingfisher */; };
 		E509EA58297580F900CCCFBA /* FavoriteGameTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA56297580F900CCCFBA /* FavoriteGameTVC.swift */; };
 		E509EA59297580F900CCCFBA /* FavoriteGameTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E509EA57297580F900CCCFBA /* FavoriteGameTVC.xib */; };
+		E5671C31297BF5E2006CC9E0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5671C33297BF5E2006CC9E0 /* Localizable.strings */; };
 		E58E97FE2975F21000348A25 /* NoteTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58E97FC2975F21000348A25 /* NoteTVC.swift */; };
 		E58E97FF2975F21000348A25 /* NoteTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E58E97FD2975F21000348A25 /* NoteTVC.xib */; };
 		E58E98032975F4FD00348A25 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58E98022975F4FD00348A25 /* Services.swift */; };
@@ -60,6 +61,8 @@
 		E509EA4D29756A0600CCCFBA /* NewNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteVC.swift; sourceTree = "<group>"; };
 		E509EA56297580F900CCCFBA /* FavoriteGameTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGameTVC.swift; sourceTree = "<group>"; };
 		E509EA57297580F900CCCFBA /* FavoriteGameTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteGameTVC.xib; sourceTree = "<group>"; };
+		E5671C32297BF5E2006CC9E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E5671C34297BF600006CC9E0 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E58E97FC2975F21000348A25 /* NoteTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTVC.swift; sourceTree = "<group>"; };
 		E58E97FD2975F21000348A25 /* NoteTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTVC.xib; sourceTree = "<group>"; };
 		E58E98022975F4FD00348A25 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 				E509EA2B2971632F00CCCFBA /* LaunchScreen.storyboard */,
 				E509EA2E2971632F00CCCFBA /* Info.plist */,
 				E509EA3F29753C0800CCCFBA /* gaming-db.xcdatamodeld */,
+				E5671C33297BF5E2006CC9E0 /* Localizable.strings */,
 			);
 			path = "gaming-db";
 			sourceTree = "<group>";
@@ -248,6 +252,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = E509EA142971632E00CCCFBA;
 			packageReferences = (
@@ -271,6 +276,7 @@
 				E509EA2D2971632F00CCCFBA /* LaunchScreen.storyboard in Resources */,
 				E509EA2A2971632F00CCCFBA /* Assets.xcassets in Resources */,
 				E509EA282971632E00CCCFBA /* Main.storyboard in Resources */,
+				E5671C31297BF5E2006CC9E0 /* Localizable.strings in Resources */,
 				E58E97FF2975F21000348A25 /* NoteTVC.xib in Resources */,
 				E5DC4D9D2975A6DA00013AEB /* FeedGameCVC.xib in Resources */,
 				E509EA59297580F900CCCFBA /* FavoriteGameTVC.xib in Resources */,
@@ -331,6 +337,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		E5671C33297BF5E2006CC9E0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5671C32297BF5E2006CC9E0 /* en */,
+				E5671C34297BF600006CC9E0 /* tr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -338,6 +353,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -398,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

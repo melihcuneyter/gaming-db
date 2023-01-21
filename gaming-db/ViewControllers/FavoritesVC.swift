@@ -39,7 +39,7 @@ class FavoritesVC: UIViewController {
     }
     
     private func setupUI() {
-        title = "Favorites"
+        title = NSLocalizedString("favoritesVC_title", comment: "")
         
         viewModel.delegate = self
         activityIndicator.startAnimating()

@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  gaming-db
+
+  Created by Melih Cüneyter on 21.01.2023.
+  
+*/
+
+//Home
+"feedVC_title" = "Feed";
+"feedVC_searchbar" = "Write something to search..";
+"feedVC_orderByAddedButton" = "Added";
+"feedVC_orderByNameButton" = "Name";
+"feedVC_orderByReleasedButton" = "Release Date";
+"feedVC_orderByARatingButton" = "Rating";
+"feedVC_orderByTitle" = "ORDER BY";
+
+//Details
+"hours" = " hours";
+
+//Favorites
+"favoritesVC_title" = "Favorites";
+
+//Notes
+"notesVC_title" = "Notes";
+
+

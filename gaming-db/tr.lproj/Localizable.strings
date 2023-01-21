@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  gaming-db
+
+  Created by Melih Cüneyter on 21.01.2023.
+  
+*/
+
+//Anasayfa
+"feedVC_title" = "Oyunlar";
+"feedVC_searchbar" = "Aramak istediğiniz oyunu yazın.";
+"feedVC_orderByAddedButton" = "Eklenme";
+"feedVC_orderByNameButton" = "Isim";
+"feedVC_orderByReleasedButton" = "Yayınlanma";
+"feedVC_orderByARatingButton" = "Oy";
+"feedVC_orderByTitle" = "Sırala";
+
+//Detay Sayfası
+"hours" = " saat";
+
+//Favoriler
+"favoritesVC_title" = "Favoriler";
+
+//Notlar
+"notesVC_title" = "Notlar";
