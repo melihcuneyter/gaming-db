@@ -13,9 +13,11 @@ protocol FeedVCViewModelProtocol {
     func getAllGames()
     func getGameCount() -> Int
     func getGame(at index: Int) -> GameModel?
+    func getGameID(at index: Int) -> Int?
     func getMoreGames(nextPageURL: String)
     func getMoreGame() -> String
     func getOrderedGames(orderBy: String)
+    func searchAllGames(text: String)
 }
 
 protocol FeedVCViewModelDelegate: AnyObject {
@@ -42,7 +44,7 @@ final class FeedVCViewModel: FeedVCViewModelProtocol {
             self.delegate?.fetchedGames()
         }
     }
-    // TODO: eğer nextpage yok ise istek atma.
+
     func getMoreGames(nextPageURL: String) {
         Services.getMoreGames(nextPageURL: nextPageURL) { [weak self] moreGame, error in
             guard let self = self else { return }
@@ -73,12 +75,29 @@ final class FeedVCViewModel: FeedVCViewModelProtocol {
         }
     }
     
+    func searchAllGames(text: String) {
+        Services.searchAllGames(gameName: text) { [weak self] games, error in
+            guard let self = self else { return }
+            if let error = error {
+                NotificationCenter.default.post(name: NSNotification.Name("searchAllGamesErrorMessage"), object: error.localizedDescription)
+                self.delegate?.fetchedGames()
+                return
+            }
+            self.games = games?.results
+            self.delegate?.fetchedGames()
+        }
+    }
+    
     func getGameCount() -> Int {
         games?.count ?? 0
     }
     
     func getGame(at index: Int) -> GameModel? {
         games?[index]
+    }
+    
+    func getGameID(at index: Int) -> Int? {
+        games?[index].id
     }
     
     func getMoreGame() -> String {

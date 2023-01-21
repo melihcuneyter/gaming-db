@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,75 +19,110 @@
                 <rect key="frame" x="0.0" y="0.0" width="421" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="lasso" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LzA-We-3zA">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="lasso" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LzA-We-3zA">
                         <rect key="frame" x="8" y="9.6666666666666714" width="100" height="128.66666666666669"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="fBO-1W-K6J"/>
                             <constraint firstAttribute="height" constant="130" id="qud-sO-FQi"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfw-LR-S6e">
+                        <rect key="frame" x="124" y="66.333333333333329" width="28" height="26.666666666666671"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal">
+                            <imageReference key="image" image="star.fill" catalog="system" symbolScale="large"/>
+                        </state>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resident Evil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dM-32-Msm">
-                        <rect key="frame" x="116" y="16" width="289" height="24"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <rect key="frame" x="124" y="15.999999999999998" width="281" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0e2-7T-bhy">
-                        <rect key="frame" x="116" y="56.000000000000007" width="289" height="20.333333333333336"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="124" y="40.333333333333336" width="281" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NUA-4n-fLQ">
-                        <rect key="frame" x="116" y="84.333333333333329" width="136" height="22"/>
+                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NUA-4n-fLQ">
+                        <rect key="frame" x="124" y="101" width="124" height="25"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOH-g8-Lms">
-                                <rect key="frame" x="0.0" y="0.0" width="28" height="22"/>
-                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOH-g8-Lms">
+                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="H5l-bp-vMh"/>
+                                    <constraint firstAttribute="width" constant="25" id="KkA-Da-Meg"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemRedColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
-                                    <imageReference key="image" image="gamecontroller" catalog="system" symbolScale="medium"/>
+                                    <imageReference key="image" image="playstation" symbolScale="large" variableValue="0.80000000000000004"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuA-hc-3hA">
-                                <rect key="frame" x="36" y="0.0" width="28" height="22"/>
-                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuA-hc-3hA">
+                                <rect key="frame" x="33" y="0.0" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="51O-Fl-lwo"/>
+                                    <constraint firstAttribute="width" constant="25" id="qvC-uv-FHy"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemRedColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
-                                    <imageReference key="image" image="gamecontroller" catalog="system" symbolScale="medium"/>
+                                    <imageReference key="image" image="xbox" symbolScale="large"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZv-V7-Ppf">
-                                <rect key="frame" x="72" y="0.0" width="28" height="22"/>
-                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZv-V7-Ppf">
+                                <rect key="frame" x="66" y="0.0" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="RhI-T3-3cE"/>
+                                    <constraint firstAttribute="height" constant="25" id="oiz-qH-2yk"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemRedColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
-                                    <imageReference key="image" image="gamecontroller" catalog="system" symbolScale="medium"/>
+                                    <imageReference key="image" image="computer" symbolScale="large"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Plc-AT-TCx">
-                                <rect key="frame" x="108" y="0.0" width="28" height="22"/>
-                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Plc-AT-TCx">
+                                <rect key="frame" x="99" y="0.0" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Tsg-aP-Ycc"/>
+                                    <constraint firstAttribute="width" constant="25" id="hqV-wJ-AcY"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemRedColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
-                                    <imageReference key="image" image="gamecontroller" catalog="system" symbolScale="medium"/>
+                                    <imageReference key="image" image="nintendo" symbolScale="large"/>
                                 </state>
                             </button>
                         </subviews>
                     </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiJ-I6-cy6">
+                        <rect key="frame" x="160" y="70.666666666666671" width="37.333333333333343" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="NUA-4n-fLQ" firstAttribute="top" secondItem="0e2-7T-bhy" secondAttribute="bottom" constant="8" id="0GZ-6C-Yzv"/>
+                    <constraint firstItem="Wfw-LR-S6e" firstAttribute="top" secondItem="0e2-7T-bhy" secondAttribute="bottom" constant="8" symbolic="YES" id="0X9-IW-jRq"/>
                     <constraint firstAttribute="bottom" secondItem="LzA-We-3zA" secondAttribute="bottom" constant="8" id="1Gw-HM-MQb"/>
                     <constraint firstItem="NUA-4n-fLQ" firstAttribute="leading" secondItem="0e2-7T-bhy" secondAttribute="leading" id="1YB-Qm-lVj"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="hiJ-I6-cy6" secondAttribute="trailing" constant="16" id="Ala-vI-qpl"/>
                     <constraint firstAttribute="trailing" secondItem="8dM-32-Msm" secondAttribute="trailing" constant="16" id="Ete-Cn-d52"/>
+                    <constraint firstItem="hiJ-I6-cy6" firstAttribute="centerY" secondItem="Wfw-LR-S6e" secondAttribute="centerY" id="H6o-UF-4ms"/>
                     <constraint firstItem="8dM-32-Msm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="PzN-v2-4dO"/>
                     <constraint firstItem="0e2-7T-bhy" firstAttribute="leading" secondItem="8dM-32-Msm" secondAttribute="leading" id="Rwu-Gd-8fV"/>
                     <constraint firstItem="LzA-We-3zA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="SvC-d0-H51"/>
+                    <constraint firstItem="hiJ-I6-cy6" firstAttribute="leading" secondItem="Wfw-LR-S6e" secondAttribute="trailing" constant="8" id="U2Q-fv-wNt"/>
+                    <constraint firstItem="NUA-4n-fLQ" firstAttribute="top" secondItem="Wfw-LR-S6e" secondAttribute="bottom" constant="8" id="W4h-pU-iPq"/>
                     <constraint firstAttribute="trailing" secondItem="0e2-7T-bhy" secondAttribute="trailing" constant="16" id="Xuo-yU-FY0"/>
-                    <constraint firstItem="0e2-7T-bhy" firstAttribute="top" secondItem="8dM-32-Msm" secondAttribute="bottom" constant="16" id="bKf-2O-E2M"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="NUA-4n-fLQ" secondAttribute="bottom" constant="1.6666666666666714" id="gQB-Ay-xXY"/>
-                    <constraint firstItem="8dM-32-Msm" firstAttribute="leading" secondItem="LzA-We-3zA" secondAttribute="trailing" constant="8" id="tnw-83-LCD"/>
+                    <constraint firstItem="0e2-7T-bhy" firstAttribute="top" secondItem="8dM-32-Msm" secondAttribute="bottom" constant="4" id="bKf-2O-E2M"/>
+                    <constraint firstItem="Wfw-LR-S6e" firstAttribute="leading" secondItem="0e2-7T-bhy" secondAttribute="leading" id="bdS-D3-kVA"/>
+                    <constraint firstAttribute="bottom" secondItem="NUA-4n-fLQ" secondAttribute="bottom" constant="16" id="c5C-KZ-0sO"/>
+                    <constraint firstItem="8dM-32-Msm" firstAttribute="leading" secondItem="LzA-We-3zA" secondAttribute="trailing" constant="16" id="tnw-83-LCD"/>
                     <constraint firstItem="LzA-We-3zA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="vkP-xY-2P5"/>
                 </constraints>
             </tableViewCellContentView>
@@ -95,12 +131,24 @@
                 <outlet property="gameDateLabel" destination="0e2-7T-bhy" id="xQd-Ka-jVN"/>
                 <outlet property="gameImageView" destination="LzA-We-3zA" id="wIN-RX-v1J"/>
                 <outlet property="gameNameLabel" destination="8dM-32-Msm" id="Atx-vh-Y6I"/>
+                <outlet property="gameRatingLabel" destination="hiJ-I6-cy6" id="SNe-QT-c8m"/>
+                <outlet property="nintendoButton" destination="Plc-AT-TCx" id="7Oz-e8-ihP"/>
+                <outlet property="pcButton" destination="kZv-V7-Ppf" id="Aja-Sd-Ckc"/>
+                <outlet property="playstationButton" destination="HOH-g8-Lms" id="e1n-5g-SeA"/>
+                <outlet property="xboxButton" destination="QuA-hc-3hA" id="Q4g-ib-gbc"/>
             </connections>
             <point key="canvasLocation" x="174.80916030534351" y="57.04225352112676"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="gamecontroller" catalog="system" width="128" height="79"/>
+        <image name="computer" width="64" height="64"/>
         <image name="lasso" catalog="system" width="128" height="121"/>
+        <image name="nintendo" width="64" height="64"/>
+        <image name="playstation" width="64" height="64"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="xbox" width="64" height="64"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

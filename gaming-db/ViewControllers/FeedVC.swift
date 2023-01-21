@@ -9,13 +9,15 @@ import UIKit
 
 class FeedVC: UIViewController {
     
-    var searchController = UISearchController()
-    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private var searchController = UISearchController()
+    
     private var viewModel: FeedVCViewModelProtocol = FeedVCViewModel()
+    
     private var orderBy: String!
+    private var pendingRequestWorkItem: DispatchWorkItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +31,12 @@ class FeedVC: UIViewController {
                                                name: NSNotification.Name("getAllGamesErrorMessage"),
                                                object: nil)
         
-        viewModel.delegate = self
-        activityIndicator.startAnimating()
-        viewModel.getAllGames()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func setupUI() {
@@ -42,19 +46,30 @@ class FeedVC: UIViewController {
         searchController.searchBar.sizeToFit()
         searchController.searchBar.placeholder = "Aramak istediğiniz oyunu yazın."
         navigationItem.searchController = searchController
-        // TODO: Searchbar change color and fix animation.
         
-        setupOrderButton()
+        setupGameOrderByButton()
+        
+        viewModel.delegate = self
+        activityIndicator.startAnimating()
+        viewModel.getAllGames()
+        
+        collectionView.layoutSubviews()
     }
     
-    private func setupOrderButton() {
+    private func setupGameOrderByButton() {
+        // order Button design and setup
         let orderButtonImage = UIImage(systemName: "arrow.up.arrow.down")
         let orderButtonImageSize = CGRect(origin: CGPoint.zero, size: CGSize(width: 25, height: 25))
         let orderButton = UIButton(frame: orderButtonImageSize)
         orderButton.setBackgroundImage(orderButtonImage, for: .normal)
         orderButton.tintColor = .white
         
-        // TODO: backgroundImage OPTIONAL and do code review
+        let orderItemsAdded = UIAction(title: "Added") { (action) in
+            self.orderBy = "-added"
+            self.activityIndicator.startAnimating()
+            self.viewModel.getOrderedGames(orderBy: self.orderBy)
+        }
+        
         let orderItemsName = UIAction(title: "Name") { (action) in
             self.orderBy = "-name"
             self.activityIndicator.startAnimating()
@@ -73,7 +88,7 @@ class FeedVC: UIViewController {
             self.viewModel.getOrderedGames(orderBy: self.orderBy)
         }
         
-        let menu = UIMenu(title: "ORDER BY", options: .displayInline, children: [orderItemsName, orderItemsDate, orderItemsRating])
+        let menu = UIMenu(title: "ORDER BY", options: .displayInline, children: [orderItemsRating, orderItemsAdded, orderItemsName, orderItemsDate])
         
         orderButton.menu = menu
         orderButton.showsMenuAsPrimaryAction = true
@@ -82,6 +97,7 @@ class FeedVC: UIViewController {
         
     }
     
+    // TODO: fix and update alert
     @objc func showError(_ notification: Notification) {
         if let text = notification.object as? String {
             let alert = UIAlertController(title: NSLocalizedString("ERROR_TITLE", comment: "Error"), message: text, preferredStyle: UIAlertController.Style.alert)
@@ -93,16 +109,24 @@ class FeedVC: UIViewController {
 
 // MARK: - SearchBar Delegate
 extension FeedVC: UISearchBarDelegate {
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        pendingRequestWorkItem?.cancel() // delay for search
+        
+        let requestWorkItem = DispatchWorkItem { [weak self] in
+            if let text = searchBar.text {
+                self?.viewModel.searchAllGames(text: text)
+                self?.view.endEditing(true)
+            }
+        }
+        
+        pendingRequestWorkItem = requestWorkItem
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250),
+                                      execute: requestWorkItem)
+    }
 }
 
-// MARK: - CollectionView Delegate
-extension FeedVC: UICollectionViewDelegate {
-    
-}
-
-// MARK: - CollectionView Datasource
-extension FeedVC: UICollectionViewDataSource {
+// MARK: - CollectionView Datasource - Delegate
+extension FeedVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.getGameCount()
     }
@@ -119,12 +143,20 @@ extension FeedVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: show gamedetail present
-        print("melih", indexPath.row)
+        // go detailsVC
+        let vc = UIStoryboard(name: "Main", bundle:Bundle.main).instantiateViewController(withIdentifier:"DetailsVC") as! DetailsVC
+        
+        if let gameID = viewModel.getGameID(at: indexPath.row) {
+            vc.gameID = gameID
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let nextPageURL = viewModel.getMoreGame()
+        let nextPageURL = viewModel.getMoreGame() // pagination if willDisplay last cells get next page
+        
         if indexPath.row == viewModel.getGameCount() - 1 {
             activityIndicator.startAnimating()
             viewModel.getMoreGames(nextPageURL: nextPageURL)
@@ -135,7 +167,7 @@ extension FeedVC: UICollectionViewDataSource {
 // MARK: - CollectionView - FlowLayoutDelegate
 extension FeedVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: (collectionView.frame.width - 20) / 2, height: (collectionView.frame.height - 20) / 2)
+        return .init(width: (collectionView.frame.width - 20) / 2, height: (collectionView.frame.height - 20) / 2) // 2 columns layout all phone display
     }
 }
 

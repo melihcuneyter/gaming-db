@@ -13,6 +13,7 @@ class FeedGameCVC: UICollectionViewCell {
     @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var gameNameLabel: UILabel!
     @IBOutlet weak var gameDateLabel: UILabel!
+    @IBOutlet weak var gameRatingLabel: UILabel!
     
     @IBOutlet weak var playstationButton: UIButton!
     @IBOutlet weak var xboxButton: UIButton!
@@ -26,62 +27,61 @@ class FeedGameCVC: UICollectionViewCell {
         gameImageView.layer.borderWidth = 1
         gameImageView.layer.borderColor = .init(red: 255, green: 255, blue: 255, alpha: 1)
         
-        enablePlatform(id: -1)
+        gameNameLabel.text = ""
+        gameDateLabel.text = ""
+        gameRatingLabel.text = ""
         gameImageView.image = nil
+        
+        pcButton.isHidden = true
+        playstationButton.isHidden = true
+        xboxButton.isHidden = true
+        nintendoButton.isHidden = true
     }
     
     override func prepareForReuse() {
-        enablePlatform(id: -1)
         gameImageView.image = nil
     }
     
-    func configureCell(_ game: GameModel){
-        let url = URL(string: game.backgroundImage!)
+    func configureCell(_ game: GameModel) {
+        let url = URL(string: game.backgroundImage ?? "")
         
         gameNameLabel.text = game.name
         gameDateLabel.text = gameInfoCreator(game)
+        gameRatingLabel.text = "\(String(game.rating))" + " / 5"
         gameImageView.kf.setImage(with: url)
+        
+        if let platforms = game.parentPlatforms {
+            for platform in platforms {
+                if platform.platform?.name == "PC" {
+                    pcButton.isHidden = false
+                }
                 
-        if let platforms = game.parentPlatforms{
-            for i in platforms{
-                enablePlatform(id: i.platform?.id ?? 0)
+                if platform.platform?.name == "PlayStation" {
+                    playstationButton.isHidden = false
+                }
+                
+                if platform.platform?.name == "Xbox" {
+                    xboxButton.isHidden = false
+                }
+                
+                if platform.platform?.name == "Nintendo" {
+                    nintendoButton.isHidden = false
+                }
             }
         }
     }
     
     // TODO: replace full CVC and functions, and add some information. ADD Another LOGO for platforms.. ADD ActivityIndicator, ADD Rating etc.
-    private func gameInfoCreator(_ game: GameModel) -> String{
-        let dateString = (game.tba ?? false) ? "TBA" : (game.released?.prefix(4) ?? "TBA")
-        var genreString = ""
+    private func gameInfoCreator(_ game: GameModel) -> String {
+        var gameGenres = ""
         
         if let genres = game.genres, ((game.genres?.count ?? 0) != 0){
             for i in genres{
-                genreString += i.name ?? ""
-                genreString += ", "
+                gameGenres += i.name ?? ""
+                gameGenres += ", "
             }
-            genreString.removeLast(2)
+            gameGenres.removeLast(2)
         }
-        return "\(genreString) "
-    }
-    
-    // TODO: renamed and add platform.
-    private func enablePlatform(id:Int){
-        switch id {
-        case -1:
-            pcButton.isHidden = true
-            xboxButton.isHidden = true
-            playstationButton.isHidden = true
-            nintendoButton.isHidden = true
-        case 1:
-            pcButton.isHidden = false
-        case 2:
-            playstationButton.isHidden = false
-        case 3:
-            xboxButton.isHidden = false
-        case 7:
-            nintendoButton.isHidden = false
-        default:
-            break
-        }
+        return "\(gameGenres)"
     }
 }

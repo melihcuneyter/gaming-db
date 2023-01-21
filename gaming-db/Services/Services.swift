@@ -30,15 +30,14 @@ final class Services {
         }
     }
     
-    static func searchAllGames(gameName:String, completion: @escaping ([GameModel]?, Error?) -> Void) {
+    static func searchAllGames(gameName:String, completion: @escaping (GamesResultModel?, Error?) -> Void) {
         let encodedString = gameName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "*"
         let urlString = Keys.apiURL + "?search_precise=true" + "&search=" + encodedString + "&key=" + Keys.apiKEY
         handleResponse(urlString: urlString, responseType: GamesResultModel.self) { responseModel, error in
-            completion(responseModel?.results, error)
+            completion(responseModel, error)
         }
     }
-
-
+    
     static func getGameDetail(gameId: Int, completion: @escaping (GameDetailModel?, Error?) -> Void) {
         let urlString = Keys.apiURL + "/" + String(gameId) + "?key=" + Keys.apiKEY
         handleResponse(urlString: urlString, responseType: GameDetailModel.self, completion: completion)
