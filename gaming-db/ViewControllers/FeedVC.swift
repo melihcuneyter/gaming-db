@@ -120,7 +120,7 @@ extension FeedVC: UISearchBarDelegate {
 extension FeedVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if viewModel.getGameCount() == 0 {
-            self.collectionView.setEmptyMessage(NSLocalizedString("nodata_view", comment: ""))
+            self.collectionView.setEmptyMessage(NSLocalizedString("nodata_feed_view", comment: ""))
         } else {
             self.collectionView.restore()
         }
@@ -130,8 +130,8 @@ extension FeedVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedGameCVC", for: indexPath) as! FeedGameCVC
+
         let showCellForGame = viewModel.getGame(at: indexPath.row)
-        
         DispatchQueue.main.async {
             cell.configureCell(showCellForGame!)
         }

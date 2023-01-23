@@ -9,7 +9,9 @@
 //General
 "delete" = "Delete";
 "fetched_error" = "Game Data Fetch Error";
-"nodata_view" = "You don't have any data";
+"nodata_notes_view" = "You don't have any Notes!";
+"nodata_favorites_view" = "You don't have any Favorite Games!";
+"nodata_feed_view" = "You don't have any Game Data!";
 "error_title" = "Error an occured";
 "ok" = "Ok";
 
@@ -31,6 +33,8 @@
 
 //Notes
 "notesVC_title" = "Notes";
+"notesVC_gameName" = "Title For Note...";
+"notesVC_localNotification_title" = "Note Deleted!";
 
 //NewNoteVC
 "saveButtonTitle" = "Save";

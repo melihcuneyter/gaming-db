@@ -9,7 +9,9 @@
 //Genel
 "delete" = "Sil";
 "fetched_error" = "Oyun Datası Indirilemedi";
-"nodata_view" = "Herhangi bir veri bulunamadı.";
+"nodata_notes_view" = "Herhangi bir not bulunamadı!";
+"nodata_favorites_view" = "Herhangi bir favori oyun bulunamadı!";
+"nodata_feed_view" = "Herhangi bir oyun verisi bulunamadı!";
 "error_title" = "Bir hata oluştu.";
 "ok" = "Tamam";
 
@@ -31,6 +33,8 @@
 
 //Notlar
 "notesVC_title" = "Notlar";
+"notesVC_gameName" = "Not başlığı girin...";
+"notesVC_localNotification_title" = "Notunuz silindi!";
 
 //NewNoteVC
 "saveButtonTitle" = "Kaydet";

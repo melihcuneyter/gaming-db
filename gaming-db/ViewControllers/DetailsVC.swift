@@ -42,6 +42,12 @@ class DetailsVC: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.largeTitleDisplayMode = .never
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -57,7 +63,6 @@ class DetailsVC: UIViewController {
         gameImageView.layer.borderWidth = 1
         gameImageView.layer.borderColor = .init(red: 255, green: 255, blue: 255, alpha: 1)
         gameIsFavoriteButton.tintColor = .red
-        navigationController?.navigationBar.prefersLargeTitles = false
         
         gameNameLabel.text = ""
         gameDateLabel.text = ""

@@ -8,10 +8,9 @@
 import Foundation
 
 struct NoteModel {
-    var gameId: Int64?
-    var gameTitle: String?
-    var imageId: String?
-    var imageUrl: String?
-    var noteDetail: String?
+    var gameID: Int64?
+    var imageID: String?
+    var imageURL: String?
+    var noteDesc: String?
     var noteTitle: String?
 }

@@ -12,6 +12,8 @@ class NotesVC: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
+    private var viewModel: NotesVCViewModelProtocol = NotesVCViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,6 +21,20 @@ class NotesVC: UIViewController {
         
         tableView.register(.init(nibName: "NoteTVC", bundle: nil), forCellReuseIdentifier: "NoteTVC")
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showError),
+                                               name: NSNotification.Name("noteGamesErrorMessage"),
+                                               object: nil)
+        viewModel.delegate = self
+        activityIndicator.startAnimating()
+        viewModel.fetchNotes()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if (Constants.sharedInstance.isNotesChanged) {
+            viewModel.fetchNotes()
+        }
     }
     
     private func setupUI() {
@@ -50,7 +66,16 @@ class NotesVC: UIViewController {
 // MARK: - TableView Delegate
 extension NotesVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(indexPath.row)")
+        // TODO: show editNote
+//        let vc = UIStoryboard(name: "Main", bundle:Bundle.main).instantiateViewController(withIdentifier:"NewNoteVC") as! NewNoteVC
+//
+//        if let note = viewModel.getNote(at: indexPath.row) {
+//            vc.note = note
+//            vc.modalPresentationStyle = .popover
+//            self.present(vc, animated: true, completion: nil)
+//        }
+//
+//        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -61,24 +86,38 @@ extension NotesVC: UITableViewDelegate {
 // MARK: - TableView DataSource
 extension NotesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO: no data view
-//        if things.count == 0 {
-//            self.tableView.setEmptyMessage(NSLocalizedString("nodata_view", comment: ""))
-//        } else {
-//            self.tableView.restore()
-//        }
-//        
-        return 10
+        if viewModel.getNoteCount() == 0 {
+            self.tableView.setEmptyMessage(NSLocalizedString("nodata_notes_view", comment: ""))
+        } else {
+            self.tableView.restore()
+        }
+        return viewModel.getNoteCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoteTVC", for: indexPath) as! NoteTVC
         
+        let showCellForNote = viewModel.getNote(at: indexPath.row)
+        DispatchQueue.main.async {
+            cell.configureCell(showCellForNote!)
+        }
+        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: NSLocalizedString("delete", comment: "")) { (contextualAction, view, bool ) in
+            LocalNotificationManager.shared.sendNotification(title: "", desc: NSLocalizedString("notesVC_localNotification_title", comment: ""))
+            self.viewModel.deleteNote(at: indexPath.row)
+            tableView.reloadRows(at: [indexPath], with: .left)
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }
 
+extension NotesVC: NotesVCViewModelDelegate {
+    func notesFetched() {
+        activityIndicator.stopAnimating()
+        tableView.reloadData()
+    }
+}

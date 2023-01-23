@@ -15,7 +15,7 @@ extension UITableView {
         messageLabel.textColor = .white
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
-        messageLabel.font = UIFont(name: "TrebuchetMS", size: 25)
+        messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
         messageLabel.sizeToFit()
 
         self.backgroundView = messageLabel
@@ -35,7 +35,7 @@ extension UICollectionView {
         messageLabel.textColor = .white
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
-        messageLabel.font = UIFont(name: "TrebuchetMS", size: 25)
+        messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
         messageLabel.sizeToFit()
 
         self.backgroundView = messageLabel

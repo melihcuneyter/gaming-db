@@ -71,7 +71,7 @@ extension FavoritesVC: UITableViewDelegate {
 extension FavoritesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if viewModel.getGameCount() == 0 {
-            self.tableView.setEmptyMessage(NSLocalizedString("nodata_view", comment: ""))
+            self.tableView.setEmptyMessage(NSLocalizedString("nodata_favorites_view", comment: ""))
         } else {
             self.tableView.restore()
         }
@@ -83,7 +83,6 @@ extension FavoritesVC: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteGameTVC", for: indexPath) as! FavoriteGameTVC
         
         let showCellForGame = viewModel.getGame(at: indexPath.row)
-        
         DispatchQueue.main.async {
             cell.configureCell(showCellForGame!)
         }
