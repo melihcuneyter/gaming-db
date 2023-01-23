@@ -14,6 +14,8 @@
 "nodata_feed_view" = "You don't have any Game Data!";
 "error_title" = "Error an occured";
 "ok" = "Ok";
+"empty_error_title" = "Error!";
+"empty_error_desc" = "Fields cannot be left blank!";
 
 //Home
 "feedVC_title" = "Feed";

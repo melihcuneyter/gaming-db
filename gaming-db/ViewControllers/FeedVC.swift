@@ -40,11 +40,11 @@ class FeedVC: UIViewController {
     }
     
     private func setupUI() {
-        title = NSLocalizedString("feedVC_title", comment: "")
+        title = "feedVC_title".localized
         
         searchController.searchBar.delegate = self
         searchController.searchBar.sizeToFit()
-        searchController.searchBar.placeholder = NSLocalizedString("feedVC_searchbar", comment: "")
+        searchController.searchBar.placeholder = "feedVC_searchbar".localized
         navigationItem.searchController = searchController
         
         setupGameOrderByButton()
@@ -64,31 +64,31 @@ class FeedVC: UIViewController {
         orderButton.setBackgroundImage(orderButtonImage, for: .normal)
         orderButton.tintColor = .white
         
-        let orderItemsAdded = UIAction(title: NSLocalizedString("feedVC_orderByAddedButton", comment: "")) { (action) in
+        let orderItemsAdded = UIAction(title: "feedVC_orderByAddedButton".localized) { (action) in
             self.orderBy = "-added"
             self.activityIndicator.startAnimating()
             self.viewModel.getOrderedGames(orderBy: self.orderBy)
         }
         
-        let orderItemsName = UIAction(title: NSLocalizedString("feedVC_orderByNameButton", comment: "")) { (action) in
+        let orderItemsName = UIAction(title: "feedVC_orderByNameButton".localized) { (action) in
             self.orderBy = "-name"
             self.activityIndicator.startAnimating()
             self.viewModel.getOrderedGames(orderBy: self.orderBy)
         }
         
-        let orderItemsDate = UIAction(title: NSLocalizedString("feedVC_orderByReleasedButton", comment: "")) { (action) in
+        let orderItemsDate = UIAction(title: "feedVC_orderByReleasedButton".localized) { (action) in
             self.orderBy = "-released"
             self.activityIndicator.startAnimating()
             self.viewModel.getOrderedGames(orderBy: self.orderBy)
         }
         
-        let orderItemsRating = UIAction(title: NSLocalizedString("feedVC_orderByARatingButton", comment: "")) { (action) in
+        let orderItemsRating = UIAction(title: "feedVC_orderByARatingButton".localized) { (action) in
             self.orderBy = "-rating"
             self.activityIndicator.startAnimating()
             self.viewModel.getOrderedGames(orderBy: self.orderBy)
         }
         
-        let menu = UIMenu(title: NSLocalizedString("feedVC_orderByTitle", comment: ""), options: .displayInline, children: [orderItemsRating, orderItemsAdded, orderItemsName, orderItemsDate])
+        let menu = UIMenu(title: "feedVC_orderByTitle".localized, options: .displayInline, children: [orderItemsRating, orderItemsAdded, orderItemsName, orderItemsDate])
         
         orderButton.menu = menu
         orderButton.showsMenuAsPrimaryAction = true
@@ -120,7 +120,7 @@ extension FeedVC: UISearchBarDelegate {
 extension FeedVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if viewModel.getGameCount() == 0 {
-            self.collectionView.setEmptyMessage(NSLocalizedString("nodata_feed_view", comment: ""))
+            self.collectionView.setEmptyMessage("nodata_feed_view".localized)
         } else {
             self.collectionView.restore()
         }
@@ -152,7 +152,7 @@ extension FeedVC: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let nextPageURL = viewModel.getMoreGame() // pagination if willDisplay last cells get next page
+        let nextPageURL = viewModel.getMoreGameNextPageURL() // pagination if willDisplay last cells get next page
         
         if indexPath.row == viewModel.getGameCount() - 1 {
             activityIndicator.startAnimating()

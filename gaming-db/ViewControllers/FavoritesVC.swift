@@ -39,7 +39,7 @@ class FavoritesVC: UIViewController {
     }
     
     private func setupUI() {
-        title = NSLocalizedString("favoritesVC_title", comment: "")
+        title = "favoritesVC_title".localized
         
         viewModel.delegate = self
         activityIndicator.startAnimating()
@@ -71,7 +71,7 @@ extension FavoritesVC: UITableViewDelegate {
 extension FavoritesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if viewModel.getGameCount() == 0 {
-            self.tableView.setEmptyMessage(NSLocalizedString("nodata_favorites_view", comment: ""))
+            self.tableView.setEmptyMessage("nodata_favorites_view".localized)
         } else {
             self.tableView.restore()
         }
@@ -91,8 +91,8 @@ extension FavoritesVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: NSLocalizedString("delete", comment: "")){ (contextualAction, view, bool ) in
-            LocalNotificationManager.shared.sendNotification(title: self.viewModel.getGameName(at: indexPath.row)!, desc: NSLocalizedString("favoritesVC_localNotification_title", comment: ""))
+        let deleteAction = UIContextualAction(style: .destructive, title: "delete".localized){ (contextualAction, view, bool ) in
+            LocalNotificationManager.shared.sendNotification(title: self.viewModel.getGameName(at: indexPath.row)!, desc: "favoritesVC_localNotification_title".localized)
             self.viewModel.removeFavoriteGame(at: indexPath.row)
             tableView.reloadRows(at: [indexPath], with: .left)
         }

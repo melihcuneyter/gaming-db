@@ -113,7 +113,7 @@ extension DetailsVC: DetailsVCViewModelDelegate {
         gameDescTextView.text = viewModel.getGameDesc()
         gameDateLabel.text = viewModel.getGameInfo()
         gameRatingLabel.text = "\(String(viewModel.getGameRating()))" + " / 5"
-        gamePlayHours.text = "\(viewModel.getGamePlayingHours() ?? 0)" + "\(NSLocalizedString("hours", comment: ""))"
+        gamePlayHours.text = "\(viewModel.getGamePlayingHours() ?? 0)" + "\("hours".localized)"
         
         let url = URL(string: viewModel.getGameImageUrl() ?? "")
         gameImageView.kf.indicatorType = .activity

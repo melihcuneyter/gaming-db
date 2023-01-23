@@ -15,7 +15,7 @@ protocol FeedVCViewModelProtocol {
     func getGame(at index: Int) -> GameModel?
     func getGameID(at index: Int) -> Int?
     func getMoreGames(nextPageURL: String)
-    func getMoreGame() -> String
+    func getMoreGameNextPageURL() -> String
     func getOrderedGames(orderBy: String)
     func searchAllGames(text: String)
 }
@@ -100,7 +100,7 @@ final class FeedVCViewModel: FeedVCViewModelProtocol {
         games?[index].id
     }
     
-    func getMoreGame() -> String {
+    func getMoreGameNextPageURL() -> String {
         nextPageURL!
     }
 }

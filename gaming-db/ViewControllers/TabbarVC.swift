@@ -14,9 +14,9 @@ class TabbarVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabbar.items![0].title = NSLocalizedString("feedVC_title", comment: "")
-        tabbar.items![1].title = NSLocalizedString("favoritesVC_title", comment: "")
-        tabbar.items![2].title = NSLocalizedString("notesVC_title", comment: "")
+        tabbar.items![0].title = "feedVC_title".localized
+        tabbar.items![1].title = "favoritesVC_title".localized
+        tabbar.items![2].title = "notesVC_title".localized
         
     }
 }

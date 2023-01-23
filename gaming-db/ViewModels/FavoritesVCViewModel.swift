@@ -48,7 +48,7 @@ final class FavoritesVCViewModel: FavoritesVCViewModelProtocol {
                 if let game {
                     if game.id == nil {
                         self.favorites.removeAll()
-                        NotificationCenter.default.post(name: NSNotification.Name("favoriteGamesErrorMessage"), object: NSLocalizedString("fetched_error", comment: ""))
+                        NotificationCenter.default.post(name: NSNotification.Name("favoriteGamesErrorMessage"), object: "fetched_error".localized)
                         return
                     }
                     

@@ -28,20 +28,25 @@ class NewNoteVC: UIViewController {
     }
     
     private func setupUI() {
-        saveButton.setTitle(NSLocalizedString("saveButtonTitle", comment: ""), for: .normal)
+        saveButton.setTitle("saveButtonTitle".localized, for: .normal)
         saveButton.layer.cornerRadius = 10
         
         gameNameTextField.borderStyle = .bezel
         gameNameTextField.layer.cornerRadius = 10
-        gameNameTextField.placeholder = NSLocalizedString("notesVC_gameName", comment: "")
+        gameNameTextField.placeholder = "notesVC_gameName".localized
         
         gameNoteTextView.layer.cornerRadius = 10
         gameNoteTextView.layer.borderWidth = 1
         gameNoteTextView.layer.borderColor = .init(red: 255, green: 255, blue: 255, alpha: 1)
-        
+    
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
+        if isValidData() == false {
+            presentAlert(title: "empty_error_title".localized, message: "empty_error_desc".localized)
+            return
+        }
+        
         setUpdatedNote()
         
         if let updatedNote {
@@ -60,5 +65,13 @@ class NewNoteVC: UIViewController {
     
     private func setUpdatedNote() {
         updatedNote = NoteModel(gameID: Int64(game?.id ?? 0), imageID: game?.backgroundImage, imageURL: game?.backgroundImage, noteDesc: gameNoteTextView.text, noteTitle: gameNameTextField.text)
+    }
+    
+    private func isValidData() -> Bool? {
+        if (gameNameTextField.text == nil || gameNameTextField.text == "" || gameNoteTextView.text == nil || gameNoteTextView.text == "") {
+            return false
+        } else {
+            return true
+        }
     }
 }

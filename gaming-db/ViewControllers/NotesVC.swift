@@ -38,7 +38,7 @@ class NotesVC: UIViewController {
     }
     
     private func setupUI() {
-        title = NSLocalizedString("notesVC_title", comment: "")
+        title = "notesVC_title".localized
         
         setupAddNotesButton()
         
@@ -87,7 +87,7 @@ extension NotesVC: UITableViewDelegate {
 extension NotesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if viewModel.getNoteCount() == 0 {
-            self.tableView.setEmptyMessage(NSLocalizedString("nodata_notes_view", comment: ""))
+            self.tableView.setEmptyMessage("nodata_notes_view".localized)
         } else {
             self.tableView.restore()
         }
@@ -106,8 +106,8 @@ extension NotesVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: NSLocalizedString("delete", comment: "")) { (contextualAction, view, bool ) in
-            LocalNotificationManager.shared.sendNotification(title: "", desc: NSLocalizedString("notesVC_localNotification_title", comment: ""))
+        let deleteAction = UIContextualAction(style: .destructive, title: "delete".localized) { (contextualAction, view, bool ) in
+            LocalNotificationManager.shared.sendNotification(title: "", desc: "notesVC_localNotification_title".localized)
             self.viewModel.deleteNote(at: indexPath.row)
             tableView.reloadRows(at: [indexPath], with: .left)
         }
