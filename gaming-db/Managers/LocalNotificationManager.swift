@@ -18,7 +18,6 @@ final class LocalNotificationManager: LocalNotificationManagerProtocol {
     private let userNotificationCenter = UNUserNotificationCenter.current()
     
     func requestNotificationAuthorization() {
-        // TODO: show alert
         userNotificationCenter.getNotificationSettings(completionHandler: { (settings) in
             
             if settings.authorizationStatus == .notDetermined {

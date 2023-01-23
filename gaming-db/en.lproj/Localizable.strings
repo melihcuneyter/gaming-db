@@ -9,6 +9,9 @@
 //General
 "delete" = "Delete";
 "fetched_error" = "Game Data Fetch Error";
+"nodata_view" = "You don't have any data";
+"error_title" = "Error an occured";
+"ok" = "Ok";
 
 //Home
 "feedVC_title" = "Feed";

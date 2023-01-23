@@ -9,6 +9,9 @@
 //Genel
 "delete" = "Sil";
 "fetched_error" = "Oyun Datası Indirilemedi";
+"nodata_view" = "Herhangi bir veri bulunamadı.";
+"error_title" = "Bir hata oluştu.";
+"ok" = "Tamam";
 
 //Anasayfa
 "feedVC_title" = "Oyunlar";

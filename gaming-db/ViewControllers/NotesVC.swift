@@ -61,17 +61,24 @@ extension NotesVC: UITableViewDelegate {
 // MARK: - TableView DataSource
 extension NotesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // TODO: no data view
+//        if things.count == 0 {
+//            self.tableView.setEmptyMessage(NSLocalizedString("nodata_view", comment: ""))
+//        } else {
+//            self.tableView.restore()
+//        }
+//        
         return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoteTVC", for: indexPath) as! NoteTVC
-
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-
+        
     }
 }
 

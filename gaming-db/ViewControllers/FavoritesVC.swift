@@ -11,9 +11,9 @@ class FavoritesVC: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
-        
+    
     private var viewModel: FavoritesVCViewModelProtocol = FavoritesVCViewModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,15 +47,6 @@ class FavoritesVC: UIViewController {
         
         Constants.sharedInstance.isFavoriteChanged = false
     }
-    
-    // TODO: fix and update alert
-    @objc func showError(_ notification: Notification) {
-        if let text = notification.object as? String {
-            let alert = UIAlertController(title: NSLocalizedString("ERROR_TITLE", comment: "Error"), message: text, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK_BUTTON", comment: "OK"), style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
 }
 
 // MARK: - TableView Delegate
@@ -79,6 +70,12 @@ extension FavoritesVC: UITableViewDelegate {
 // MARK: - TableView DataSource
 extension FavoritesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if viewModel.getGameCount() == 0 {
+            self.tableView.setEmptyMessage(NSLocalizedString("nodata_view", comment: ""))
+        } else {
+            self.tableView.restore()
+        }
+        
         return viewModel.getGameCount()
     }
     
@@ -90,7 +87,7 @@ extension FavoritesVC: UITableViewDataSource {
         DispatchQueue.main.async {
             cell.configureCell(showCellForGame!)
         }
-
+        
         return cell
     }
     

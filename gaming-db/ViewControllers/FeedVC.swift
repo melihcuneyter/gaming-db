@@ -96,15 +96,6 @@ class FeedVC: UIViewController {
         navigationItem.rightBarButtonItem = rightButton
         
     }
-    
-    // TODO: fix and update alert
-    @objc func showError(_ notification: Notification) {
-        if let text = notification.object as? String {
-            let alert = UIAlertController(title: NSLocalizedString("alert_title", comment: "Error"), message: text, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("ok", comment: "OK"), style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
 }
 
 // MARK: - SearchBar Delegate
@@ -128,6 +119,12 @@ extension FeedVC: UISearchBarDelegate {
 // MARK: - CollectionView Datasource - Delegate
 extension FeedVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if viewModel.getGameCount() == 0 {
+            self.collectionView.setEmptyMessage(NSLocalizedString("nodata_view", comment: ""))
+        } else {
+            self.collectionView.restore()
+        }
+        
         return viewModel.getGameCount()
     }
     

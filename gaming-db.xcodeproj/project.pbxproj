@@ -28,6 +28,7 @@
 		E5671C36297E95CF006CC9E0 /* NotesCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5671C35297E95CF006CC9E0 /* NotesCoreDataManager.swift */; };
 		E5671C38297E95E2006CC9E0 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5671C37297E95E2006CC9E0 /* NoteModel.swift */; };
 		E5671C3A297E95F5006CC9E0 /* NewNoteVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5671C39297E95F5006CC9E0 /* NewNoteVCViewModel.swift */; };
+		E57B91FB297E99C80092F853 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57B91FA297E99C80092F853 /* Extensions.swift */; };
 		E58E97FE2975F21000348A25 /* NoteTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58E97FC2975F21000348A25 /* NoteTVC.swift */; };
 		E58E97FF2975F21000348A25 /* NoteTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E58E97FD2975F21000348A25 /* NoteTVC.xib */; };
 		E58E98032975F4FD00348A25 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58E98022975F4FD00348A25 /* Services.swift */; };
@@ -66,6 +67,7 @@
 		E5671C35297E95CF006CC9E0 /* NotesCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCoreDataManager.swift; sourceTree = "<group>"; };
 		E5671C37297E95E2006CC9E0 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		E5671C39297E95F5006CC9E0 /* NewNoteVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteVCViewModel.swift; sourceTree = "<group>"; };
+		E57B91FA297E99C80092F853 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E58E97FC2975F21000348A25 /* NoteTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTVC.swift; sourceTree = "<group>"; };
 		E58E97FD2975F21000348A25 /* NoteTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTVC.xib; sourceTree = "<group>"; };
 		E58E98022975F4FD00348A25 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				E509EA202971632E00CCCFBA /* AppDelegate.swift */,
 				E509EA34297165D900CCCFBA /* Constants.swift */,
+				E57B91FA297E99C80092F853 /* Extensions.swift */,
 				E509EA5A2975811B00CCCFBA /* CollectionViewCell */,
 				E509EA4229753CAA00CCCFBA /* Managers */,
 				E58E980429768C9100348A25 /* Models */,
@@ -311,6 +314,7 @@
 				E58E980629768CA200348A25 /* GameResultModel.swift in Sources */,
 				E58E98182977F58000348A25 /* DetailsVCViewModel.swift in Sources */,
 				E58E980A29768CBF00348A25 /* GameDetailModel.swift in Sources */,
+				E57B91FB297E99C80092F853 /* Extensions.swift in Sources */,
 				E509EA35297165D900CCCFBA /* Constants.swift in Sources */,
 				E509EA4E29756A0600CCCFBA /* NewNoteVC.swift in Sources */,
 				E58E980829768CAA00348A25 /* GameModel.swift in Sources */,

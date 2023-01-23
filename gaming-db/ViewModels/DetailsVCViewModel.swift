@@ -55,8 +55,8 @@ final class DetailsVCViewModel: DetailsVCViewModelProtocol {
         let gameDate = (game?.tba ?? false) ? "TBA" : (game?.released?.prefix(4) ?? "TBA")
         var gameGenres = ""
         
-        if let genres = game?.genres, ((game?.genres?.count ?? 0) != 0){
-            for i in genres{
+        if let genres = game?.genres, ((game?.genres?.count ?? 0) != 0) {
+            for i in genres {
                 gameGenres += i.name ?? ""
                 gameGenres += ", "
             }
@@ -93,11 +93,10 @@ final class DetailsVCViewModel: DetailsVCViewModelProtocol {
         return game?.playtime
     }
     
-    // TODO: control
-    func handleFavorite() -> Bool?{
-        if let gameId = game?.id{
-            if let isFavorite = isFavoriteGame(gameId){
-                if isFavorite{  return unlikeGame() }
+    func handleFavorite() -> Bool? {
+        if let gameId = game?.id {
+            if let isFavorite = isFavoriteGame(gameId) {
+                if isFavorite { return unlikeGame() }
                 return likeGame()
             }
             return nil

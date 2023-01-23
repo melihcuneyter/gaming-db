@@ -79,15 +79,6 @@ class DetailsVC: UIViewController {
         
     }
     
-    // TODO: fix and update alert
-    @objc func showError(_ notification: Notification) {
-        if let text = notification.object as? String {
-            let alert = UIAlertController(title: NSLocalizedString("ERROR_TITLE", comment: "Error"), message: text, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK_BUTTON", comment: "OK"), style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
     private func favoriteHandler(status: Bool?) {
         if let status {
             if status {
