@@ -128,14 +128,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Adı (Oyun Adı)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP4-id-bap">
-                                <rect key="frame" x="16" y="91" width="361" height="27.666666666666671"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hTV-PT-ayl">
-                                <rect key="frame" x="16" y="150.66666666666669" width="361" height="575.33333333333326"/>
+                                <rect key="frame" x="16" y="141.66666666666669" width="361" height="584.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -155,24 +149,29 @@
                                     <action selector="saveButtonPressed:" destination="8bl-8v-PIi" eventType="touchUpInside" id="tAj-fA-Dpd"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ync-w3-4lE">
+                                <rect key="frame" x="16" y="91" width="361" height="18.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RHD-nP-s3H"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="RHD-nP-s3H" firstAttribute="trailing" secondItem="hP4-id-bap" secondAttribute="trailing" constant="16" id="FKh-8I-v48"/>
+                            <constraint firstItem="hTV-PT-ayl" firstAttribute="top" secondItem="ync-w3-4lE" secondAttribute="bottom" constant="32" id="9Dp-5c-fGf"/>
+                            <constraint firstItem="ync-w3-4lE" firstAttribute="leading" secondItem="RHD-nP-s3H" secondAttribute="leading" constant="16" id="Eqz-9Y-5iw"/>
                             <constraint firstItem="Ytl-4d-gWM" firstAttribute="leading" secondItem="RHD-nP-s3H" secondAttribute="leading" constant="100" id="Gr8-WD-fOU"/>
                             <constraint firstItem="RHD-nP-s3H" firstAttribute="trailing" secondItem="hTV-PT-ayl" secondAttribute="trailing" constant="16" id="MER-BB-vW5"/>
+                            <constraint firstItem="ync-w3-4lE" firstAttribute="top" secondItem="RHD-nP-s3H" secondAttribute="top" constant="32" id="R1D-rL-4ab"/>
                             <constraint firstItem="Ytl-4d-gWM" firstAttribute="top" secondItem="hTV-PT-ayl" secondAttribute="bottom" constant="27" id="R5u-ga-ynq"/>
                             <constraint firstItem="RHD-nP-s3H" firstAttribute="bottom" secondItem="Ytl-4d-gWM" secondAttribute="bottom" constant="24" id="U1w-dg-h8F"/>
-                            <constraint firstItem="hTV-PT-ayl" firstAttribute="top" secondItem="hP4-id-bap" secondAttribute="bottom" constant="32" id="XKk-p8-xpB"/>
-                            <constraint firstItem="hP4-id-bap" firstAttribute="top" secondItem="RHD-nP-s3H" secondAttribute="top" constant="32" id="bzg-6U-oR0"/>
+                            <constraint firstItem="RHD-nP-s3H" firstAttribute="trailing" secondItem="ync-w3-4lE" secondAttribute="trailing" constant="16" id="dIU-0W-v0b"/>
                             <constraint firstItem="hTV-PT-ayl" firstAttribute="leading" secondItem="RHD-nP-s3H" secondAttribute="leading" constant="16" id="fbm-qJ-vAf"/>
                             <constraint firstItem="Ytl-4d-gWM" firstAttribute="centerX" secondItem="R90-WM-ntJ" secondAttribute="centerX" id="u5b-HF-TH0"/>
-                            <constraint firstItem="hP4-id-bap" firstAttribute="leading" secondItem="RHD-nP-s3H" secondAttribute="leading" constant="16" id="yVL-dS-Uki"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gameNameLabel" destination="hP4-id-bap" id="SCg-lX-dbi"/>
+                        <outlet property="gameNameTextField" destination="ync-w3-4lE" id="a1d-SY-pRW"/>
                         <outlet property="gameNoteTextView" destination="hTV-PT-ayl" id="qLT-Vd-mzB"/>
                         <outlet property="saveButton" destination="Ytl-4d-gWM" id="6Jd-8Y-NN8"/>
                     </connections>

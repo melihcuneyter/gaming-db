@@ -22,7 +22,7 @@ class NotesVC: UIViewController {
     }
     
     private func setupUI() {
-        title = "Notes"
+        title = NSLocalizedString("notesVC_title", comment: "")
         
         setupAddNotesButton()
         
@@ -41,7 +41,9 @@ class NotesVC: UIViewController {
     }
     
     @objc func addNotesButton(_ sender: UIBarButtonItem) {
-        
+        let vc = UIStoryboard(name: "Main", bundle:Bundle.main).instantiateViewController(withIdentifier:"NewNoteVC") as! NewNoteVC
+        vc.modalPresentationStyle = .popover
+        self.present(vc, animated: true, completion: nil)
     }
 }
 
@@ -49,12 +51,6 @@ class NotesVC: UIViewController {
 extension NotesVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("\(indexPath.row)")
-//
-//        let vc = UIStoryboard(name: "Main", bundle:Bundle.main).instantiateViewController(withIdentifier:"LocationDetailVC") as! LocationDetailVC
-//        let weatherDetail = weatherLocations[indexPath.row]
-//        vc.weatherDetail = weatherDetail
-//        vc.modalPresentationStyle = .fullScreen
-//        self.present(vc, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -65,24 +61,17 @@ extension NotesVC: UITableViewDelegate {
 // MARK: - TableView DataSource
 extension NotesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoteTVC", for: indexPath) as! NoteTVC
-//        let weatherDetail = weatherLocations[indexPath.row]
-//        cell.currentWeather = weatherDetail
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            print("Deleted Location")
-//
-//            self.weatherLocations.remove(at: indexPath.row)
-//            self.saveLocations()
-//            self.tableView.deleteRows(at: [indexPath], with: .fade)
-//        }
+
     }
 }
 
