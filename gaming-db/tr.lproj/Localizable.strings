@@ -6,6 +6,10 @@
   
 */
 
+//Genel
+"delete" = "Sil";
+"fetched_error" = "Oyun Datası Indirilemedi";
+
 //Anasayfa
 "feedVC_title" = "Oyunlar";
 "feedVC_searchbar" = "Aramak istediğiniz oyunu yazın.";
@@ -20,6 +24,10 @@
 
 //Favoriler
 "favoritesVC_title" = "Favoriler";
+"favoritesVC_localNotification_title" = "Favoriniz silindi!";
 
 //Notlar
 "notesVC_title" = "Notlar";
+
+//NewNoteVC
+"saveButtonTitle" = "Kaydet";

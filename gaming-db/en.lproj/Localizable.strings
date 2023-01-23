@@ -6,6 +6,10 @@
   
 */
 
+//General
+"delete" = "Delete";
+"fetched_error" = "Game Data Fetch Error";
+
 //Home
 "feedVC_title" = "Feed";
 "feedVC_searchbar" = "Write something to search..";
@@ -20,8 +24,13 @@
 
 //Favorites
 "favoritesVC_title" = "Favorites";
+"favoritesVC_localNotification_title" = "Deleted your favorite!";
 
 //Notes
 "notesVC_title" = "Notes";
+
+//NewNoteVC
+"saveButtonTitle" = "Save";
+
 
 

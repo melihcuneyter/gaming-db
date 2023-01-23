@@ -254,7 +254,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uh2-qF-Ml4">
-                                <rect key="frame" x="332.33333333333331" y="308" width="28.666666666666686" height="40"/>
+                                <rect key="frame" x="334.33333333333331" y="308" width="26.666666666666686" height="40"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
@@ -318,7 +318,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYN-xC-p4o">
-                                <rect key="frame" x="16" y="356" width="36" height="18"/>
+                                <rect key="frame" x="16" y="356" width="361" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -334,17 +334,6 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="6I2-ra-2mC">
                                 <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyh-qs-EtG">
-                                <rect key="frame" x="332.33333333333331" y="352.33333333333331" width="28.666666666666686" height="25.666666666666686"/>
-                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal">
-                                    <imageReference key="image" image="note.text.badge.plus" catalog="system" symbolScale="large"/>
-                                </state>
-                                <connections>
-                                    <action selector="addNoteButtonPressed:" destination="jXE-Oe-8nV" eventType="touchUpInside" id="vMc-ay-Wvs"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8s-7y-QZb">
                                 <rect key="frame" x="16" y="390" width="28" height="26.666666666666686"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
@@ -377,15 +366,13 @@
                         <viewLayoutGuide key="safeArea" id="K9n-lV-NCY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="K9n-lV-NCY" firstAttribute="trailing" secondItem="eyh-qs-EtG" secondAttribute="trailing" constant="32" id="1R5-WP-FG5"/>
                             <constraint firstItem="6I2-ra-2mC" firstAttribute="centerY" secondItem="yq5-wa-bR1" secondAttribute="centerY" id="1ta-qm-3MK"/>
                             <constraint firstItem="fRn-OE-mfV" firstAttribute="centerY" secondItem="yq5-wa-bR1" secondAttribute="centerY" constant="84" id="2DG-o9-IIG"/>
                             <constraint firstItem="01p-1n-gPp" firstAttribute="leading" secondItem="c9C-7J-Rwu" secondAttribute="leading" id="5db-tR-8Yt"/>
                             <constraint firstItem="6I2-ra-2mC" firstAttribute="centerX" secondItem="yq5-wa-bR1" secondAttribute="centerX" id="6Dq-j7-ZIW"/>
                             <constraint firstItem="omA-cE-K8k" firstAttribute="top" secondItem="fRn-OE-mfV" secondAttribute="bottom" constant="16" id="8pe-Z8-Ha0"/>
+                            <constraint firstItem="K9n-lV-NCY" firstAttribute="trailing" secondItem="lYN-xC-p4o" secondAttribute="trailing" constant="16" id="9C1-nv-iMP"/>
                             <constraint firstItem="K9n-lV-NCY" firstAttribute="trailing" secondItem="uh2-qF-Ml4" secondAttribute="trailing" constant="32" id="C2L-Xb-zvK"/>
-                            <constraint firstItem="eyh-qs-EtG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lYN-xC-p4o" secondAttribute="trailing" constant="56" id="C37-Qb-f2Y"/>
-                            <constraint firstItem="eyh-qs-EtG" firstAttribute="centerX" secondItem="uh2-qF-Ml4" secondAttribute="centerX" id="CXD-Kw-JqO"/>
                             <constraint firstItem="omA-cE-K8k" firstAttribute="leading" secondItem="K9n-lV-NCY" secondAttribute="leading" constant="16" id="EZm-4U-Pem"/>
                             <constraint firstItem="OjN-ja-370" firstAttribute="centerY" secondItem="S8s-7y-QZb" secondAttribute="centerY" id="GgV-0x-aKw"/>
                             <constraint firstItem="K9n-lV-NCY" firstAttribute="bottom" secondItem="omA-cE-K8k" secondAttribute="bottom" constant="16" id="Hbp-SG-bTb"/>
@@ -397,7 +384,6 @@
                             <constraint firstItem="S8s-7y-QZb" firstAttribute="leading" secondItem="lYN-xC-p4o" secondAttribute="leading" id="Uau-vm-gYA"/>
                             <constraint firstItem="fRn-OE-mfV" firstAttribute="centerX" secondItem="yq5-wa-bR1" secondAttribute="centerX" id="Vbg-3R-HEK"/>
                             <constraint firstItem="YM3-F0-Fea" firstAttribute="centerY" secondItem="9SC-Qf-8Zd" secondAttribute="centerY" id="XSm-3S-glI"/>
-                            <constraint firstItem="eyh-qs-EtG" firstAttribute="centerY" secondItem="lYN-xC-p4o" secondAttribute="centerY" id="e73-eO-gIg"/>
                             <constraint firstItem="OjN-ja-370" firstAttribute="leading" secondItem="S8s-7y-QZb" secondAttribute="trailing" constant="8" id="f9M-yb-GgE"/>
                             <constraint firstItem="OjN-ja-370" firstAttribute="leading" secondItem="S8s-7y-QZb" secondAttribute="trailing" constant="8" symbolic="YES" id="gOW-3f-xJX"/>
                             <constraint firstItem="K9n-lV-NCY" firstAttribute="trailing" secondItem="c9C-7J-Rwu" secondAttribute="trailing" constant="16" id="gRp-jl-DOU"/>
@@ -417,7 +403,6 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="6I2-ra-2mC" id="aDN-j1-ewG"/>
-                        <outlet property="gameAddNoteButton" destination="eyh-qs-EtG" id="RZU-Rw-nNN"/>
                         <outlet property="gameDateLabel" destination="lYN-xC-p4o" id="chJ-MO-IUT"/>
                         <outlet property="gameDescTextView" destination="omA-cE-K8k" id="POo-QM-DYx"/>
                         <outlet property="gameImageView" destination="c9C-7J-Rwu" id="5dL-IE-fPL"/>
@@ -523,7 +508,6 @@
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="nintendo" width="64" height="64"/>
-        <image name="note.text.badge.plus" catalog="system" width="128" height="108"/>
         <image name="playstation" width="64" height="64"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="text.bubble" catalog="system" width="128" height="110"/>

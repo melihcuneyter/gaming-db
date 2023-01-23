@@ -53,7 +53,7 @@ class FeedVC: UIViewController {
         activityIndicator.startAnimating()
         viewModel.getAllGames()
         
-        collectionView.layoutSubviews()
+        LocalNotificationManager.shared.requestNotificationAuthorization() // localNotification request
     }
     
     private func setupGameOrderByButton() {
@@ -100,7 +100,6 @@ class FeedVC: UIViewController {
     // TODO: fix and update alert
     @objc func showError(_ notification: Notification) {
         if let text = notification.object as? String {
-            // localized yap
             let alert = UIAlertController(title: NSLocalizedString("alert_title", comment: "Error"), message: text, preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("ok", comment: "OK"), style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)

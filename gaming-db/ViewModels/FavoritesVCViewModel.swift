@@ -14,7 +14,8 @@ protocol FavoritesVCViewModelProtocol {
     func getGameCount() -> Int
     func getGame(at index: Int) -> GameDetailModel?
     func getGameID(at index: Int) -> Int?
-    func removeGame(at index:Int)
+    func removeFavoriteGame(at index:Int)
+    func getGameName(at index: Int) -> String?
 }
 
 protocol FavoritesVCViewModelDelegate: AnyObject {
@@ -47,12 +48,14 @@ final class FavoritesVCViewModel: FavoritesVCViewModelProtocol {
                 if let game {
                     if game.id == nil {
                         self.favorites.removeAll()
-                        NotificationCenter.default.post(name: NSNotification.Name("favoriteGamesErrorMessage"), object: NSLocalizedString("FETCH_ERROR", comment: "Game Data Fetch Error"))
+                        NotificationCenter.default.post(name: NSNotification.Name("favoriteGamesErrorMessage"), object: NSLocalizedString("fetched_error", comment: ""))
                         return
                     }
+                    
                     self.games?[i.offset] = game
                     onQueue -= 1
-                    if(onQueue <= 0){
+                    
+                    if(onQueue <= 0) {
                         self.delegate?.favoritesFetched()
                     }
                 }
@@ -72,11 +75,15 @@ final class FavoritesVCViewModel: FavoritesVCViewModelProtocol {
         games?[index].id
     }
     
+    func getGameName(at index: Int) -> String? {
+        games?[index].name
+    }
+    
     func getGameImageId(at index: Int) -> String? {
         URL(string: games?[index].backgroundImage ?? "")?.lastPathComponent
     }
     
-    func removeGame(at index:Int){
+    func removeFavoriteGame(at index:Int) {
         FavoriteCoreDataManager.shared.deleteFavorite(game: favorites[index])
         favorites.remove(at: index)
         games?.remove(at: index)

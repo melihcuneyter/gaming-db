@@ -36,7 +36,7 @@ final class DetailsVCViewModel: DetailsVCViewModelProtocol {
         Services.getGameDetail(gameId: id) { [weak self] game, error in
             guard let self = self else { return }
             if game?.id == nil {
-                NotificationCenter.default.post(name: NSNotification.Name("getGameDetailsErrorMessage"), object: NSLocalizedString("FETCH_ERROR", comment: "Game Data Fetch Error"))
+                NotificationCenter.default.post(name: NSNotification.Name("getGameDetailsErrorMessage"), object: NSLocalizedString("fetched_error", comment: ""))
             }
             self.game = game
             self.delegate?.gameLoaded()

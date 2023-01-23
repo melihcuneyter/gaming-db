@@ -14,7 +14,6 @@ class DetailsVC: UIViewController {
     @IBOutlet weak var gameDateLabel: UILabel!
     @IBOutlet weak var gameIsFavoriteButton: UIButton!
     @IBOutlet weak var gameDescTextView: UITextView!
-    @IBOutlet weak var gameAddNoteButton: UIButton!
     @IBOutlet weak var gameRatingLabel: UILabel!
     @IBOutlet weak var gamePlayHours: UILabel!
     
@@ -105,14 +104,6 @@ class DetailsVC: UIViewController {
     
     @IBAction func favoriteButtonPressed(_ sender: Any) {
         favoriteHandler(status: viewModel.handleFavorite())
-    }
-    
-    @IBAction func addNoteButtonPressed(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle:Bundle.main).instantiateViewController(withIdentifier:"NewNoteVC") as! NewNoteVC
-        vc.modalPresentationStyle = .popover
-        vc.gameID = self.gameID
-        vc.gameName = viewModel.getGameName()
-        self.present(vc, animated: true, completion: nil)
     }
 }
 

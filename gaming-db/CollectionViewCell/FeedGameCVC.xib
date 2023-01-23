@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -139,7 +137,7 @@
             </constraints>
             <size key="customSize" width="230" height="259"/>
             <connections>
-                <outlet property="gameDateLabel" destination="Wax-s6-clF" id="AFr-3I-hgm"/>
+                <outlet property="gameGenresLabel" destination="Wax-s6-clF" id="AFr-3I-hgm"/>
                 <outlet property="gameImageView" destination="NaP-V1-lQs" id="49A-JH-M6I"/>
                 <outlet property="gameNameLabel" destination="6sr-0g-8HO" id="PVX-aC-kEl"/>
                 <outlet property="gameRatingLabel" destination="Niv-HB-04o" id="Tvv-tj-CfU"/>

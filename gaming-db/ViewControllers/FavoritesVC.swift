@@ -94,10 +94,13 @@ extension FavoritesVC: UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            viewModel.removeGame(at: indexPath.row)
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: NSLocalizedString("delete", comment: "")){ (contextualAction, view, bool ) in
+            LocalNotificationManager.shared.sendNotification(title: self.viewModel.getGameName(at: indexPath.row)!, desc: NSLocalizedString("favoritesVC_localNotification_title", comment: ""))
+            self.viewModel.removeFavoriteGame(at: indexPath.row)
+            tableView.reloadRows(at: [indexPath], with: .left)
         }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }
 

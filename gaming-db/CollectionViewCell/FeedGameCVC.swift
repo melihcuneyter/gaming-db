@@ -12,7 +12,7 @@ class FeedGameCVC: UICollectionViewCell {
     
     @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var gameNameLabel: UILabel!
-    @IBOutlet weak var gameDateLabel: UILabel!
+    @IBOutlet weak var gameGenresLabel: UILabel!
     @IBOutlet weak var gameRatingLabel: UILabel!
     
     @IBOutlet weak var playstationButton: UIButton!
@@ -28,7 +28,7 @@ class FeedGameCVC: UICollectionViewCell {
         gameImageView.layer.borderColor = .init(red: 255, green: 255, blue: 255, alpha: 1)
         
         gameNameLabel.text = ""
-        gameDateLabel.text = ""
+        gameGenresLabel.text = ""
         gameRatingLabel.text = ""
         gameImageView.image = nil
         
@@ -46,7 +46,7 @@ class FeedGameCVC: UICollectionViewCell {
         let url = URL(string: game.backgroundImage ?? "")
         
         gameNameLabel.text = game.name
-        gameDateLabel.text = gameInfoCreator(game)
+        gameGenresLabel.text = gameGenres(game)
         gameRatingLabel.text = "\(String(game.rating))" + " / 5"
         gameImageView.kf.setImage(with: url)
         
@@ -71,8 +71,7 @@ class FeedGameCVC: UICollectionViewCell {
         }
     }
     
-    // TODO: replace full CVC and functions, and add some information. ADD Another LOGO for platforms.. ADD ActivityIndicator, ADD Rating etc.
-    private func gameInfoCreator(_ game: GameModel) -> String {
+    private func gameGenres(_ game: GameModel) -> String {
         var gameGenres = ""
         
         if let genres = game.genres, ((game.genres?.count ?? 0) != 0){
