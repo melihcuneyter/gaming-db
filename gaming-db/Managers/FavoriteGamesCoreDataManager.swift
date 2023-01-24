@@ -34,6 +34,7 @@ final class FavoriteCoreDataManager {
     
     func getFavorites() -> [Favorite] {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favorite")
+        
         do {
             let games = try managedContext.fetch(fetchRequest)
             return games as! [Favorite]
@@ -57,6 +58,7 @@ final class FavoriteCoreDataManager {
     func editFavorite(obj: Favorite, imageID: String) {
         let game = managedContext.object(with: obj.objectID)
         game.setValue(imageID, forKey: "imageID")
+        
         do {
             try managedContext.save()
         } catch let error as NSError {
@@ -68,9 +70,8 @@ final class FavoriteCoreDataManager {
         let fetchRequest: NSFetchRequest<Favorite>
         fetchRequest = Favorite.fetchRequest()
         
-        fetchRequest.predicate = NSPredicate(
-            format: "gameID = %d", id
-        )
+        fetchRequest.predicate = NSPredicate(format: "gameID = %d", id)
+        
         do {
             let objects = try managedContext.fetch(fetchRequest)
             if objects.count > 0 {
@@ -87,8 +88,8 @@ final class FavoriteCoreDataManager {
         let fetchRequest: NSFetchRequest<Favorite>
         fetchRequest = Favorite.fetchRequest()
         
-        fetchRequest.predicate = NSPredicate(
-            format: "gameID = %d", id)
+        fetchRequest.predicate = NSPredicate(format: "gameID = %d", id)
+        
         do {
             let objects = try managedContext.fetch(fetchRequest)
             for game in objects {

@@ -7,8 +7,7 @@
 
 import UIKit
 
-class DetailsVC: UIViewController {
-    
+final class DetailsVC: UIViewController {
     @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var gameNameLabel: UILabel!
     @IBOutlet weak var gameDateLabel: UILabel!
@@ -87,7 +86,7 @@ class DetailsVC: UIViewController {
         
     }
     
-    private func favoriteHandler(status: Bool?) {
+    private func isFavorite(status: Bool?) {
         if let status {
             if status {
                 gameIsFavoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
@@ -102,7 +101,7 @@ class DetailsVC: UIViewController {
     }
     
     @IBAction func favoriteButtonPressed(_ sender: Any) {
-        favoriteHandler(status: viewModel.handleFavorite())
+        isFavorite(status: viewModel.favoriteStatus())
     }
     
     @IBAction func addNoteButtonPressed(_ sender: Any) {
@@ -115,10 +114,11 @@ class DetailsVC: UIViewController {
     }
 }
 
+// MARK: - DetailsVC Delegate
 extension DetailsVC: DetailsVCViewModelDelegate {
     func gameLoaded() {
         if let gameID = self.gameID {
-            favoriteHandler(status: viewModel.isFavoriteGame(gameID))
+            isFavorite(status: viewModel.isFavoriteGame(gameID))
         }
 
         gameNameLabel.text = viewModel.getGameName()
@@ -127,12 +127,12 @@ extension DetailsVC: DetailsVCViewModelDelegate {
         gameRatingLabel.text = "\(String(viewModel.getGameRating()))" + " / 5"
         gamePlayHours.text = "\(viewModel.getGamePlayingHours() ?? 0)" + "\("hours".localized)"
         
-        let url = URL(string: viewModel.getGameImageUrl() ?? "")
+        let url = URL(string: viewModel.getGameImageUrl() ?? Constants.sharedInstance.baseImageURL)
         gameImageView.kf.indicatorType = .activity
         gameImageView.kf.setImage(with: url)
         
         gameName = viewModel.getGameName()
-        gameImageURL = viewModel.getGameImageUrl()
+        gameImageURL = viewModel.getGameImageUrl() ?? Constants.sharedInstance.baseImageURL
         
         if let platforms = viewModel.getGamePlatforms() {
             for platform in platforms {

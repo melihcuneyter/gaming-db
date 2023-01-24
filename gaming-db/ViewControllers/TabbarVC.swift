@@ -7,8 +7,7 @@
 
 import UIKit
 
-class TabbarVC: UITabBarController {
-
+final class TabbarVC: UITabBarController {
     @IBOutlet weak var tabbar: UITabBar!
     
     override func viewDidLoad() {

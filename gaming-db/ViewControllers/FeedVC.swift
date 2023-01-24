@@ -7,8 +7,7 @@
 
 import UIKit
 
-class FeedVC: UIViewController {
-    
+final class FeedVC: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     

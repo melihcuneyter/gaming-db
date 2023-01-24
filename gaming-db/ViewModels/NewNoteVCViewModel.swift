@@ -25,8 +25,7 @@ final class NewNoteVCViewModel: NewNoteVCViewModelProtocol {
         _ = NoteCoreDataManager.shared.saveNote(noteModel: note)
     }
     
-    
-    func editNote(note:Note, newNote:NoteModel){
+    func editNote(note: Note, newNote: NoteModel) {
         NoteCoreDataManager.shared.editNote(noteModel: note, newNoteModel: newNote)
     }
 }

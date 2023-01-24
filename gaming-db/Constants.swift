@@ -13,6 +13,7 @@ final class Constants {
         
     var isFavoriteChanged = false
     var isNotesChanged = false
+    var baseImageURL: String =  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9oDX09M6mwiMyr1L336xN4TFDuRdDdtAqo4G_rFeKbAjwUA0HRWjLfiSSRfLGTKNp5M&usqp=CAU"
 }
 
 struct Keys {

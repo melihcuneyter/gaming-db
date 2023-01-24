@@ -22,7 +22,6 @@ final class NoteCoreDataManager {
         let note = NSManagedObject(entity: entity, insertInto: managedContext)
         note.setValue(noteModel.gameID, forKey: "gameID")
         note.setValue(noteModel.gameName, forKey: "gameName")
-        note.setValue(noteModel.imageID, forKey: "imageID")
         note.setValue(noteModel.imageURL, forKey: "imageURL")
         note.setValue(noteModel.noteTitle, forKey: "noteTitle")
         note.setValue(noteModel.noteDesc, forKey: "noteDesc")
@@ -39,6 +38,7 @@ final class NoteCoreDataManager {
     
     func getNotes() -> [Note] {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Note")
+        
         do {
             let notes = try managedContext.fetch(fetchRequest)
             return notes as! [Note]
@@ -62,7 +62,6 @@ final class NoteCoreDataManager {
         let note = managedContext.object(with: noteModel.objectID)
         note.setValue(newNoteModel.gameID, forKey: "gameID")
         note.setValue(newNoteModel.gameName, forKey: "gameName")
-        note.setValue(newNoteModel.imageID, forKey: "imageID")
         note.setValue(newNoteModel.imageURL, forKey: "imageURL")
         note.setValue(newNoteModel.noteTitle, forKey: "noteTitle")
         note.setValue(newNoteModel.noteDesc, forKey: "noteDesc")

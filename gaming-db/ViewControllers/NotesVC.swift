@@ -7,8 +7,7 @@
 
 import UIKit
 
-class NotesVC: UIViewController {
-    
+final class NotesVC: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
@@ -48,16 +47,14 @@ class NotesVC: UIViewController {
 // MARK: - TableView Delegate
 extension NotesVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: show editNote
-//        let vc = UIStoryboard(name: "Main", bundle:Bundle.main).instantiateViewController(withIdentifier:"NewNoteVC") as! NewNoteVC
-//
-//        if let note = viewModel.getNote(at: indexPath.row) {
-//            vc.note = note
-//            vc.modalPresentationStyle = .popover
-//            self.present(vc, animated: true, completion: nil)
-//        }
-//
-//        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = UIStoryboard(name: "Main", bundle:Bundle.main).instantiateViewController(withIdentifier:"NewNoteVC") as! NewNoteVC
+        
+        vc.note = viewModel.getNote(at: indexPath.row)
+        vc.modalPresentationStyle = .popover
+        vc.delegateNotesVC = self
+        self.present(vc, animated: true, completion: nil)
+
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -97,6 +94,7 @@ extension NotesVC: UITableViewDataSource {
     }
 }
 
+// MARK: - NotesVC Delegate
 extension NotesVC: NotesVCViewModelDelegate {
     func notesFetched() {
         activityIndicator.stopAnimating()

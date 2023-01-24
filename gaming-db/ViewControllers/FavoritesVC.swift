@@ -7,8 +7,7 @@
 
 import UIKit
 
-class FavoritesVC: UIViewController {
-    
+final class FavoritesVC: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
@@ -99,6 +98,7 @@ extension FavoritesVC: UITableViewDataSource {
     }
 }
 
+// MARK: FavoritesVC Delegate
 extension FavoritesVC: FavoritesVCViewModelDelegate {
     func favoritesFetched() {
         tableView.reloadData()

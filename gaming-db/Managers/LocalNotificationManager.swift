@@ -19,9 +19,7 @@ final class LocalNotificationManager: LocalNotificationManagerProtocol {
     
     func requestNotificationAuthorization() {
         userNotificationCenter.getNotificationSettings(completionHandler: { (settings) in
-            
             if settings.authorizationStatus == .notDetermined {
-                
                 self.userNotificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
                     guard error == nil && granted else {
                         print("User denied permissions, or error occurred")

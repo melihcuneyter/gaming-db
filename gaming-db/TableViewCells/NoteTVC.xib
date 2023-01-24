@@ -18,21 +18,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="421" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="lasso" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="V27-Kf-ndS">
-                        <rect key="frame" x="8" y="9.6666666666666714" width="100" height="128.66666666666669"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="V27-Kf-ndS">
+                        <rect key="frame" x="8" y="8" width="100" height="130"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="5lp-63-4Mv"/>
                             <constraint firstAttribute="height" constant="130" id="Cnf-bl-GCQ"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resident Evil" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLk-Dv-hhW">
-                        <rect key="frame" x="116" y="7.9999999999999982" width="289" height="20.333333333333329"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <rect key="frame" x="124" y="8" width="281" height="18"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LS-xm-mjL">
-                        <rect key="frame" x="113" y="50.333333333333343" width="292" height="80"/>
+                        <rect key="frame" x="120" y="62.333333333333343" width="285" height="80"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="80" id="Ufn-jq-ErT"/>
@@ -41,24 +41,24 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRe-KP-g1T">
-                        <rect key="frame" x="116" y="32.333333333333336" width="289" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRe-KP-g1T">
+                        <rect key="frame" x="124" y="34" width="281" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" systemColor="systemRedColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="5LS-xm-mjL" firstAttribute="top" secondItem="iRe-KP-g1T" secondAttribute="bottom" id="7il-LJ-eNM"/>
+                    <constraint firstItem="5LS-xm-mjL" firstAttribute="top" secondItem="iRe-KP-g1T" secondAttribute="bottom" constant="8" id="7il-LJ-eNM"/>
                     <constraint firstItem="iRe-KP-g1T" firstAttribute="leading" secondItem="hLk-Dv-hhW" secondAttribute="leading" id="CAb-9m-8w7"/>
-                    <constraint firstItem="hLk-Dv-hhW" firstAttribute="leading" secondItem="V27-Kf-ndS" secondAttribute="trailing" constant="8" id="FaU-Xe-ZLH"/>
+                    <constraint firstItem="hLk-Dv-hhW" firstAttribute="leading" secondItem="V27-Kf-ndS" secondAttribute="trailing" constant="16" id="FaU-Xe-ZLH"/>
                     <constraint firstAttribute="trailing" secondItem="5LS-xm-mjL" secondAttribute="trailing" constant="16" id="G3M-d8-CII"/>
                     <constraint firstItem="V27-Kf-ndS" firstAttribute="top" secondItem="Cg5-yg-zYr" secondAttribute="top" constant="8" id="J9n-dD-StL"/>
                     <constraint firstItem="V27-Kf-ndS" firstAttribute="leading" secondItem="Cg5-yg-zYr" secondAttribute="leading" constant="8" id="V59-cP-Oax"/>
                     <constraint firstAttribute="trailing" secondItem="hLk-Dv-hhW" secondAttribute="trailing" constant="16" id="Wix-Jm-DQi"/>
                     <constraint firstItem="hLk-Dv-hhW" firstAttribute="top" secondItem="Cg5-yg-zYr" secondAttribute="top" constant="8" id="lo1-F8-6jC"/>
-                    <constraint firstItem="5LS-xm-mjL" firstAttribute="leading" secondItem="V27-Kf-ndS" secondAttribute="trailing" constant="5" id="rzX-XA-N8b"/>
-                    <constraint firstItem="iRe-KP-g1T" firstAttribute="top" secondItem="hLk-Dv-hhW" secondAttribute="bottom" constant="4" id="tjP-kY-1qC"/>
+                    <constraint firstItem="5LS-xm-mjL" firstAttribute="leading" secondItem="V27-Kf-ndS" secondAttribute="trailing" constant="12" id="rzX-XA-N8b"/>
+                    <constraint firstItem="iRe-KP-g1T" firstAttribute="top" secondItem="hLk-Dv-hhW" secondAttribute="bottom" constant="8" id="tjP-kY-1qC"/>
                     <constraint firstAttribute="bottom" secondItem="V27-Kf-ndS" secondAttribute="bottom" constant="8" id="xER-Le-8aO"/>
                     <constraint firstAttribute="trailing" secondItem="iRe-KP-g1T" secondAttribute="trailing" constant="16" id="zTb-1w-uqm"/>
                 </constraints>
@@ -74,12 +74,14 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="lasso" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

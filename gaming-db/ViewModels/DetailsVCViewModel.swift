@@ -20,7 +20,7 @@ protocol DetailsVCViewModelProtocol {
     func getGameRating() -> Double
     func getGamePlayingHours() -> Int?
     
-    func handleFavorite() -> Bool?
+    func favoriteStatus() -> Bool?
     func isFavoriteGame(_ id:Int) -> Bool?
 }
 
@@ -93,7 +93,7 @@ final class DetailsVCViewModel: DetailsVCViewModelProtocol {
         return game?.playtime
     }
     
-    func handleFavorite() -> Bool? {
+    func favoriteStatus() -> Bool? {
         if let gameId = game?.id {
             if let isFavorite = isFavoriteGame(gameId) {
                 if isFavorite { return unlikeGame() }

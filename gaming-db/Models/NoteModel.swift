@@ -10,7 +10,6 @@ import Foundation
 struct NoteModel {
     var gameID: Int64?
     var gameName: String?
-    var imageID: String?
     var imageURL: String?
     var noteDesc: String?
     var noteTitle: String?

@@ -8,8 +8,7 @@
 import UIKit
 import Kingfisher
 
-class FeedGameCVC: UICollectionViewCell {
-    
+final class FeedGameCVC: UICollectionViewCell {
     @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var gameNameLabel: UILabel!
     @IBOutlet weak var gameGenresLabel: UILabel!
@@ -43,7 +42,7 @@ class FeedGameCVC: UICollectionViewCell {
     }
     
     func configureCell(_ game: GameModel) {
-        let url = URL(string: game.backgroundImage ?? "")
+        let url = URL(string: game.backgroundImage ?? Constants.sharedInstance.baseImageURL)
         
         gameNameLabel.text = game.name
         gameGenresLabel.text = gameGenres(game)

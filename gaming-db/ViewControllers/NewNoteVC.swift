@@ -7,8 +7,7 @@
 
 import UIKit
 
-class NewNoteVC: UIViewController {
-
+final class NewNoteVC: UIViewController {
     @IBOutlet weak var gameNoteTitleTextField: UITextField!
     @IBOutlet weak var gameNoteTextView: UITextView!
     @IBOutlet weak var saveButton: UIButton!
@@ -21,7 +20,7 @@ class NewNoteVC: UIViewController {
     var gameName: String?
     var gameImageURL: String?
     
-    private var updatedNote: NoteModel?
+    private var editidNote: NoteModel?
     weak var delegateNotesVC: NotesVC?
         
     override func viewDidLoad() {
@@ -40,7 +39,20 @@ class NewNoteVC: UIViewController {
         gameNoteTextView.layer.cornerRadius = 10
         gameNoteTextView.layer.borderWidth = 1
         gameNoteTextView.layer.borderColor = .init(red: 255, green: 255, blue: 255, alpha: 1)
+        
+        gameNoteTitleTextField.text = note?.noteTitle ?? ""
+        gameNoteTextView.text = note?.noteDesc ?? ""
+       
+        setAlreadyHaveNotes(note: note)
     
+    }
+    
+    private func setAlreadyHaveNotes(note: Note?) { // when click already note edit
+        if let note = note {
+            gameID = Int(note.gameID)
+            gameName = note.gameName
+            gameImageURL = note.imageURL
+        }
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
@@ -49,25 +61,25 @@ class NewNoteVC: UIViewController {
             return
         }
         
-        setUpdatedNote()
+        setEditidNote()
         
-        if let updatedNote {
+        if let editidNote {
             if let note {
-                viewModel.editNote(note: note, newNote: updatedNote)
+                viewModel.editNote(note: note, newNote: editidNote)
             }
             else {
-                viewModel.newNote(note: updatedNote)
+                viewModel.newNote(note: editidNote)
             }
             
-            LocalNotificationManager.shared.sendNotification(title: "\(updatedNote.noteTitle ?? "")", desc: "newNotesVC_localNotification_title".localized)
+            LocalNotificationManager.shared.sendNotification(title: "\(editidNote.noteTitle ?? "")", desc: "newNotesVC_localNotification_title".localized)
             Constants.sharedInstance.isNotesChanged = true
             delegateNotesVC?.viewWillAppear(true)
             self.dismiss(animated: true)
         }
     }
     
-    private func setUpdatedNote() {
-        updatedNote = NoteModel(gameID: Int64(gameID ?? 0), gameName: gameName, imageID: gameImageURL, imageURL: gameImageURL, noteDesc: gameNoteTextView.text, noteTitle: gameNoteTitleTextField.text)
+    private func setEditidNote() {
+        editidNote = NoteModel(gameID: Int64(gameID ?? 0), gameName: gameName, imageURL: gameImageURL, noteDesc: gameNoteTextView.text, noteTitle: gameNoteTitleTextField.text)
     }
     
     private func isValidData() -> Bool? {

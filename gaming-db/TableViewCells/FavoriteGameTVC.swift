@@ -7,8 +7,7 @@
 
 import UIKit
 
-class FavoriteGameTVC: UITableViewCell {
-    
+final class FavoriteGameTVC: UITableViewCell {
     @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var gameNameLabel: UILabel!
     @IBOutlet weak var gameDateLabel: UILabel!
@@ -43,7 +42,7 @@ class FavoriteGameTVC: UITableViewCell {
     
     func configureCell(_ game: GameDetailModel) {
         let gameDate = (game.tba ?? false) ? "TBA" : (game.released?.prefix(4) ?? "TBA")
-        let url = URL(string: game.backgroundImage ?? "")
+        let url = URL(string: game.backgroundImage ?? Constants.sharedInstance.baseImageURL)
         
         gameNameLabel.text = game.name
         gameDateLabel.text = "\(gameDate)"
