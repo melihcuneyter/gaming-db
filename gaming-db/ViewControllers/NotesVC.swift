@@ -90,8 +90,8 @@ extension NotesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "delete".localized) { (contextualAction, view, bool ) in
             LocalNotificationManager.shared.sendNotification(title: self.viewModel.getNoteTitle(at: indexPath.row)!, desc: "notesVC_localNotification_title".localized)
+            tableView.reloadRows(at: [indexPath], with: .fade)
             self.viewModel.deleteNote(at: indexPath.row)
-            tableView.reloadRows(at: [indexPath], with: .left)
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }

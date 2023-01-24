@@ -29,7 +29,6 @@ class FavoritesVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         if Constants.sharedInstance.isFavoriteChanged {
             activityIndicator.startAnimating()
             viewModel.fetchFavoriteGames()
@@ -93,8 +92,8 @@ extension FavoritesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "delete".localized){ (contextualAction, view, bool ) in
             LocalNotificationManager.shared.sendNotification(title: self.viewModel.getGameName(at: indexPath.row)!, desc: "favoritesVC_localNotification_title".localized)
+            tableView.reloadRows(at: [indexPath], with: .fade)
             self.viewModel.removeFavoriteGame(at: indexPath.row)
-            tableView.reloadRows(at: [indexPath], with: .left)
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }

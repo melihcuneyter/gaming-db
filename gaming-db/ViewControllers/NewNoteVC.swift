@@ -34,8 +34,7 @@ class NewNoteVC: UIViewController {
         saveButton.setTitle("saveButtonTitle".localized, for: .normal)
         saveButton.layer.cornerRadius = 10
         
-        gameNoteTitleTextField.borderStyle = .roundedRect
-        gameNoteTitleTextField.layer.cornerRadius = 10
+        gameNoteTitleTextField.borderStyle = .line
         gameNoteTitleTextField.placeholder = "notesVC_gameName".localized
         
         gameNoteTextView.layer.cornerRadius = 10

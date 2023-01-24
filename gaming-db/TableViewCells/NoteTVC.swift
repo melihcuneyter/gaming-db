@@ -28,7 +28,7 @@ class NoteTVC: UITableViewCell {
         let url = URL(string: note.imageURL ?? "")
         
         gameNameLabel.text = note.gameName
-        gameNoteTitleLabel.text = note.noteTitle
+        gameNoteTitleLabel.text = note.noteTitle?.uppercased()
         gameNoteTextView.text = note.noteDesc
         gameImageView.kf.setImage(with: url)
     }
