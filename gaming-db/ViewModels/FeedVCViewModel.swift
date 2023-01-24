@@ -98,6 +98,6 @@ final class FeedVCViewModel: FeedVCViewModelProtocol {
     }
     
     func getMoreGameNextPageURL() -> String {
-        nextPageURL!
+        nextPageURL ?? ""
     }
 }

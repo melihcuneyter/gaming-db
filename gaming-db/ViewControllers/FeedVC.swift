@@ -152,6 +152,7 @@ extension FeedVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let nextPageURL = viewModel.getMoreGameNextPageURL() // pagination if willDisplay last cells get next page
+        if nextPageURL == "" { return }
         
         if indexPath.row == viewModel.getGameCount() - 1 {
             activityIndicator.startAnimating()

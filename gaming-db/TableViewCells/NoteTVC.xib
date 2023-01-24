@@ -14,7 +14,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoteTVC" rowHeight="150" id="pGC-YY-hOD" customClass="NoteTVC" customModule="gaming_db" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="421" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="pGC-YY-hOD" id="Cg5-yg-zYr">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pGC-YY-hOD" id="Cg5-yg-zYr">
                 <rect key="frame" x="0.0" y="0.0" width="421" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -53,6 +53,7 @@
                     <constraint firstItem="iRe-KP-g1T" firstAttribute="leading" secondItem="hLk-Dv-hhW" secondAttribute="leading" id="CAb-9m-8w7"/>
                     <constraint firstItem="hLk-Dv-hhW" firstAttribute="leading" secondItem="V27-Kf-ndS" secondAttribute="trailing" constant="16" id="FaU-Xe-ZLH"/>
                     <constraint firstAttribute="trailing" secondItem="5LS-xm-mjL" secondAttribute="trailing" constant="16" id="G3M-d8-CII"/>
+                    <constraint firstAttribute="bottom" secondItem="5LS-xm-mjL" secondAttribute="bottom" constant="8" id="Irg-1c-vvA"/>
                     <constraint firstItem="V27-Kf-ndS" firstAttribute="top" secondItem="Cg5-yg-zYr" secondAttribute="top" constant="8" id="J9n-dD-StL"/>
                     <constraint firstItem="V27-Kf-ndS" firstAttribute="leading" secondItem="Cg5-yg-zYr" secondAttribute="leading" constant="8" id="V59-cP-Oax"/>
                     <constraint firstAttribute="trailing" secondItem="hLk-Dv-hhW" secondAttribute="trailing" constant="16" id="Wix-Jm-DQi"/>
