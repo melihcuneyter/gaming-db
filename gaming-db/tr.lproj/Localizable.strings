@@ -14,7 +14,7 @@
 "nodata_feed_view" = "Herhangi bir oyun verisi bulunamadı!";
 "error_title" = "Bir hata oluştu.";
 "ok" = "Tamam";
-"empty_error_title" = "Hata";
+"empty_error_title" = "Hata!";
 "empty_error_desc" = "Alanlar boş bırakılamaz!";
 
 //Anasayfa
@@ -36,7 +36,8 @@
 //Notlar
 "notesVC_title" = "Notlar";
 "notesVC_gameName" = "Not başlığı girin...";
-"notesVC_localNotification_title" = "Notunuz silindi!";
+"notesVC_localNotification_title" = "Adlı notunuz silindi!";
+"newNotesVC_localNotification_title" = "Adlı notunuz başarıyla eklendi!";
 
 //NewNoteVC
 "saveButtonTitle" = "Kaydet";

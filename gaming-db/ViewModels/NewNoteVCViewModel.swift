@@ -9,8 +9,8 @@ import Foundation
 
 protocol NewNoteVCViewModelProtocol {
     var delegate: NewNoteVCViewModelDelegate? { get set }
-    func newNote(obj: NoteModel)
-    func editNote(obj: Note, newObj: NoteModel)
+    func newNote(note: NoteModel)
+    func editNote(note: Note, newNote: NoteModel)
 }
 
 protocol NewNoteVCViewModelDelegate: AnyObject {
@@ -21,12 +21,12 @@ final class NewNoteVCViewModel: NewNoteVCViewModelProtocol {
     weak var delegate: NewNoteVCViewModelDelegate?
     private var notes = [Note]()
     
-    func newNote(obj: NoteModel) {
-        _ = NoteCoreDataManager.shared.saveNote(noteModel: obj)
+    func newNote(note: NoteModel) {
+        _ = NoteCoreDataManager.shared.saveNote(noteModel: note)
     }
     
     
-    func editNote(obj:Note, newObj:NoteModel){
-        NoteCoreDataManager.shared.editNote(noteModel: obj, newNoteModel: newObj)
+    func editNote(note:Note, newNote:NoteModel){
+        NoteCoreDataManager.shared.editNote(noteModel: note, newNoteModel: newNote)
     }
 }

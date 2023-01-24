@@ -42,27 +42,6 @@ class NotesVC: UIViewController {
     private func setupUI() {
         title = "notesVC_title".localized
         
-        setupAddNotesButton()
-        
-    }
-    
-    private func setupAddNotesButton() {
-        let notesButtonImage = UIImage(systemName: "plus")
-        let notesButtonImageSize = CGRect(origin: CGPoint.zero, size: CGSize(width: 25, height: 25))
-        let addButton = UIButton(frame: notesButtonImageSize)
-        addButton.setBackgroundImage(notesButtonImage, for: .normal)
-        addButton.tintColor = .white
-        let rightButton = UIBarButtonItem(customView: addButton)
-        addButton.addTarget(self, action: #selector(addNotesButton(_:)), for: .touchUpInside)
-        
-        navigationItem.rightBarButtonItem = rightButton
-    }
-    
-    @objc func addNotesButton(_ sender: UIBarButtonItem) {
-        let vc = UIStoryboard(name: "Main", bundle:Bundle.main).instantiateViewController(withIdentifier:"NewNoteVC") as! NewNoteVC
-        vc.delegateNotesVC = self
-        vc.modalPresentationStyle = .popover
-        self.present(vc, animated: true, completion: nil)
     }
 }
 
@@ -110,7 +89,7 @@ extension NotesVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "delete".localized) { (contextualAction, view, bool ) in
-            LocalNotificationManager.shared.sendNotification(title: "", desc: "notesVC_localNotification_title".localized)
+            LocalNotificationManager.shared.sendNotification(title: self.viewModel.getNoteTitle(at: indexPath.row)!, desc: "notesVC_localNotification_title".localized)
             self.viewModel.deleteNote(at: indexPath.row)
             tableView.reloadRows(at: [indexPath], with: .left)
         }

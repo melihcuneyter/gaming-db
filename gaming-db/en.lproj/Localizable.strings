@@ -37,6 +37,7 @@
 "notesVC_title" = "Notes";
 "notesVC_gameName" = "Title For Note...";
 "notesVC_localNotification_title" = "Note Deleted!";
+"newNotesVC_localNotification_title" = "Succesfully added!";
 
 //NewNoteVC
 "saveButtonTitle" = "Save";

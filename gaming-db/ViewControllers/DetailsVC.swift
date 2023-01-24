@@ -24,8 +24,11 @@ class DetailsVC: UIViewController {
     @IBOutlet weak var pcButton: UIButton!
     @IBOutlet weak var nintendoButton: UIButton!
     
+    @IBOutlet weak var addNoteButton: UIButton!
+    
     var gameID: Int?
-    var gameDetail: GameDetailModel?
+    var gameName: String?
+    var gameImageURL: String?
     
     var delegateFavorite: FavoritesVC?
     private var viewModel: DetailsVCViewModelProtocol = DetailsVCViewModel()
@@ -101,6 +104,15 @@ class DetailsVC: UIViewController {
     @IBAction func favoriteButtonPressed(_ sender: Any) {
         favoriteHandler(status: viewModel.handleFavorite())
     }
+    
+    @IBAction func addNoteButtonPressed(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle:Bundle.main).instantiateViewController(withIdentifier:"NewNoteVC") as! NewNoteVC
+        vc.gameID = self.gameID
+        vc.gameName = self.gameName
+        vc.gameImageURL = self.gameImageURL
+        vc.modalPresentationStyle = .popover
+        self.present(vc, animated: true, completion: nil)
+    }
 }
 
 extension DetailsVC: DetailsVCViewModelDelegate {
@@ -108,7 +120,7 @@ extension DetailsVC: DetailsVCViewModelDelegate {
         if let gameID = self.gameID {
             favoriteHandler(status: viewModel.isFavoriteGame(gameID))
         }
-        
+
         gameNameLabel.text = viewModel.getGameName()
         gameDescTextView.text = viewModel.getGameDesc()
         gameDateLabel.text = viewModel.getGameInfo()
@@ -118,6 +130,9 @@ extension DetailsVC: DetailsVCViewModelDelegate {
         let url = URL(string: viewModel.getGameImageUrl() ?? "")
         gameImageView.kf.indicatorType = .activity
         gameImageView.kf.setImage(with: url)
+        
+        gameName = viewModel.getGameName()
+        gameImageURL = viewModel.getGameImageUrl()
         
         if let platforms = viewModel.getGamePlatforms() {
             for platform in platforms {

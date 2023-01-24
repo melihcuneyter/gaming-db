@@ -9,14 +9,18 @@ import UIKit
 
 class NewNoteVC: UIViewController {
 
-    @IBOutlet weak var gameNameTextField: UITextField!
+    @IBOutlet weak var gameNoteTitleTextField: UITextField!
     @IBOutlet weak var gameNoteTextView: UITextView!
     @IBOutlet weak var saveButton: UIButton!
     
     private var viewModel: NewNoteVCViewModelProtocol = NewNoteVCViewModel()
     
     var note: Note?
-    var game: GameModel?
+    
+    var gameID: Int?
+    var gameName: String?
+    var gameImageURL: String?
+    
     private var updatedNote: NoteModel?
     weak var delegateNotesVC: NotesVC?
         
@@ -24,16 +28,15 @@ class NewNoteVC: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        
     }
     
     private func setupUI() {
         saveButton.setTitle("saveButtonTitle".localized, for: .normal)
         saveButton.layer.cornerRadius = 10
         
-        gameNameTextField.borderStyle = .bezel
-        gameNameTextField.layer.cornerRadius = 10
-        gameNameTextField.placeholder = "notesVC_gameName".localized
+        gameNoteTitleTextField.borderStyle = .roundedRect
+        gameNoteTitleTextField.layer.cornerRadius = 10
+        gameNoteTitleTextField.placeholder = "notesVC_gameName".localized
         
         gameNoteTextView.layer.cornerRadius = 10
         gameNoteTextView.layer.borderWidth = 1
@@ -51,12 +54,13 @@ class NewNoteVC: UIViewController {
         
         if let updatedNote {
             if let note {
-                viewModel.editNote(obj: note, newObj: updatedNote)
+                viewModel.editNote(note: note, newNote: updatedNote)
             }
             else {
-                viewModel.newNote(obj: updatedNote)
+                viewModel.newNote(note: updatedNote)
             }
             
+            LocalNotificationManager.shared.sendNotification(title: "\(updatedNote.noteTitle ?? "")", desc: "newNotesVC_localNotification_title".localized)
             Constants.sharedInstance.isNotesChanged = true
             delegateNotesVC?.viewWillAppear(true)
             self.dismiss(animated: true)
@@ -64,11 +68,11 @@ class NewNoteVC: UIViewController {
     }
     
     private func setUpdatedNote() {
-        updatedNote = NoteModel(gameID: Int64(game?.id ?? 0), imageID: game?.backgroundImage, imageURL: game?.backgroundImage, noteDesc: gameNoteTextView.text, noteTitle: gameNameTextField.text)
+        updatedNote = NoteModel(gameID: Int64(gameID ?? 0), gameName: gameName, imageID: gameImageURL, imageURL: gameImageURL, noteDesc: gameNoteTextView.text, noteTitle: gameNoteTitleTextField.text)
     }
     
     private func isValidData() -> Bool? {
-        if (gameNameTextField.text == nil || gameNameTextField.text == "" || gameNoteTextView.text == nil || gameNoteTextView.text == "") {
+        if (gameNoteTitleTextField.text == nil || gameNoteTitleTextField.text == "" || gameNoteTextView.text == nil || gameNoteTextView.text == "") {
             return false
         } else {
             return true

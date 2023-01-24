@@ -170,8 +170,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gameNameTextField" destination="ync-w3-4lE" id="a1d-SY-pRW"/>
                         <outlet property="gameNoteTextView" destination="hTV-PT-ayl" id="qLT-Vd-mzB"/>
+                        <outlet property="gameNoteTitleTextField" destination="ync-w3-4lE" id="a1d-SY-pRW"/>
                         <outlet property="saveButton" destination="Ytl-4d-gWM" id="6Jd-8Y-NN8"/>
                     </connections>
                 </viewController>
@@ -360,12 +360,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYR-2v-gDx">
+                                <rect key="frame" x="334" y="352" width="29" height="26"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="note.text.badge.plus" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="addNoteButtonPressed:" destination="jXE-Oe-8nV" eventType="touchUpInside" id="EC4-9R-Oha"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="K9n-lV-NCY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6I2-ra-2mC" firstAttribute="centerY" secondItem="yq5-wa-bR1" secondAttribute="centerY" id="1ta-qm-3MK"/>
                             <constraint firstItem="fRn-OE-mfV" firstAttribute="centerY" secondItem="yq5-wa-bR1" secondAttribute="centerY" constant="84" id="2DG-o9-IIG"/>
+                            <constraint firstItem="iYR-2v-gDx" firstAttribute="centerY" secondItem="lYN-xC-p4o" secondAttribute="centerY" id="2OI-Yn-pWf"/>
                             <constraint firstItem="01p-1n-gPp" firstAttribute="leading" secondItem="c9C-7J-Rwu" secondAttribute="leading" id="5db-tR-8Yt"/>
                             <constraint firstItem="6I2-ra-2mC" firstAttribute="centerX" secondItem="yq5-wa-bR1" secondAttribute="centerX" id="6Dq-j7-ZIW"/>
                             <constraint firstItem="omA-cE-K8k" firstAttribute="top" secondItem="fRn-OE-mfV" secondAttribute="bottom" constant="16" id="8pe-Z8-Ha0"/>
@@ -391,6 +403,7 @@
                             <constraint firstItem="01p-1n-gPp" firstAttribute="leading" secondItem="K9n-lV-NCY" secondAttribute="leading" constant="16" id="iSY-s3-fnz"/>
                             <constraint firstItem="9SC-Qf-8Zd" firstAttribute="leading" secondItem="OjN-ja-370" secondAttribute="trailing" constant="80" id="ieC-5z-4ZK"/>
                             <constraint firstItem="01p-1n-gPp" firstAttribute="centerY" secondItem="uh2-qF-Ml4" secondAttribute="centerY" id="jgN-lS-cIV"/>
+                            <constraint firstItem="iYR-2v-gDx" firstAttribute="centerX" secondItem="uh2-qF-Ml4" secondAttribute="centerX" id="ojY-mx-Iez"/>
                             <constraint firstItem="c9C-7J-Rwu" firstAttribute="top" secondItem="K9n-lV-NCY" secondAttribute="top" constant="16" id="rVT-bS-Ezx"/>
                             <constraint firstItem="9SC-Qf-8Zd" firstAttribute="centerY" secondItem="OjN-ja-370" secondAttribute="centerY" id="ro9-Tb-Qh8"/>
                             <constraint firstItem="S8s-7y-QZb" firstAttribute="leading" secondItem="K9n-lV-NCY" secondAttribute="leading" constant="16" id="tFe-Ph-BBB"/>
@@ -401,6 +414,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="6I2-ra-2mC" id="aDN-j1-ewG"/>
+                        <outlet property="addNoteButton" destination="iYR-2v-gDx" id="Fwi-PL-HZM"/>
                         <outlet property="gameDateLabel" destination="lYN-xC-p4o" id="chJ-MO-IUT"/>
                         <outlet property="gameDescTextView" destination="omA-cE-K8k" id="POo-QM-DYx"/>
                         <outlet property="gameImageView" destination="c9C-7J-Rwu" id="5dL-IE-fPL"/>
@@ -506,6 +520,7 @@
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="nintendo" width="64" height="64"/>
+        <image name="note.text.badge.plus" catalog="system" width="128" height="108"/>
         <image name="playstation" width="64" height="64"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="text.bubble" catalog="system" width="128" height="110"/>
