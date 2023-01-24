@@ -30,6 +30,8 @@ final class NewNoteVC: UIViewController {
     }
     
     private func setupUI() {
+        hideKeyboardWhenTappedAround()
+        
         saveButton.setTitle("saveButtonTitle".localized, for: .normal)
         saveButton.layer.cornerRadius = 10
         
