@@ -32,6 +32,8 @@ class NotesVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         if (Constants.sharedInstance.isNotesChanged) {
             viewModel.fetchNotes()
         }
@@ -58,6 +60,7 @@ class NotesVC: UIViewController {
     
     @objc func addNotesButton(_ sender: UIBarButtonItem) {
         let vc = UIStoryboard(name: "Main", bundle:Bundle.main).instantiateViewController(withIdentifier:"NewNoteVC") as! NewNoteVC
+        vc.delegateNotesVC = self
         vc.modalPresentationStyle = .popover
         self.present(vc, animated: true, completion: nil)
     }

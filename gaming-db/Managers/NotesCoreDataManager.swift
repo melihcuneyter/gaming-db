@@ -17,14 +17,14 @@ final class NoteCoreDataManager {
         managedContext = appDelegate.persistentContainer.viewContext
     }
     
-    func saveNote(obj: NoteModel) -> Note? {
+    func saveNote(noteModel: NoteModel) -> Note? {
         let entity = NSEntityDescription.entity(forEntityName: "Note", in: managedContext)!
         let note = NSManagedObject(entity: entity, insertInto: managedContext)
-        note.setValue(obj.gameID, forKey: "gameID")
-        note.setValue(obj.imageID, forKey: "imageID")
-        note.setValue(obj.imageURL, forKey: "imageURL")
-        note.setValue(obj.noteTitle, forKey: "noteTitle")
-        note.setValue(obj.noteDesc, forKey: "noteDesc")
+        note.setValue(noteModel.gameID, forKey: "gameID")
+        note.setValue(noteModel.imageID, forKey: "imageID")
+        note.setValue(noteModel.imageURL, forKey: "imageURL")
+        note.setValue(noteModel.noteTitle, forKey: "noteTitle")
+        note.setValue(noteModel.noteDesc, forKey: "noteDesc")
         
         do {
             try managedContext.save()
@@ -57,13 +57,13 @@ final class NoteCoreDataManager {
         }
     }
     
-    func editNote(obj: Note, newObj: NoteModel) {
-        let note = managedContext.object(with: obj.objectID)
-        note.setValue(newObj.gameID, forKey: "gameID")
-        note.setValue(newObj.imageID, forKey: "imageID")
-        note.setValue(newObj.imageURL, forKey: "imageURL")
-        note.setValue(newObj.noteTitle, forKey: "noteTitle")
-        note.setValue(newObj.noteDesc, forKey: "noteDesc")
+    func editNote(noteModel: Note, newNoteModel: NoteModel) {
+        let note = managedContext.object(with: noteModel.objectID)
+        note.setValue(newNoteModel.gameID, forKey: "gameID")
+        note.setValue(newNoteModel.imageID, forKey: "imageID")
+        note.setValue(newNoteModel.imageURL, forKey: "imageURL")
+        note.setValue(newNoteModel.noteTitle, forKey: "noteTitle")
+        note.setValue(newNoteModel.noteDesc, forKey: "noteDesc")
         
         do {
             try managedContext.save()

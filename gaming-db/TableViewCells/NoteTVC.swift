@@ -23,7 +23,7 @@ class NoteTVC: UITableViewCell {
     }
     
     func configureCell(_ note: Note) {
-        let url = URL(string: note.imageURL ?? "")
+        let url = URL(string: "")
         
         gameNameLabel.text = note.gameName
         gameNoteTextView.text = note.noteDesc

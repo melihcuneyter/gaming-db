@@ -35,7 +35,7 @@ final class FeedVCViewModel: FeedVCViewModelProtocol {
             guard let self = self else { return }
             if let error = error {
                 NotificationCenter.default.post(name: NSNotification.Name("getAllGamesErrorMessage"), object: error.localizedDescription)
-                self.delegate?.fetchedGames()
+                print(error.localizedDescription)
                 return
             }
             
@@ -49,8 +49,7 @@ final class FeedVCViewModel: FeedVCViewModelProtocol {
         Services.getMoreGames(nextPageURL: nextPageURL) { [weak self] moreGame, error in
             guard let self = self else { return }
             if let error = error {
-                NotificationCenter.default.post(name: NSNotification.Name("getMoreGamesErrorMessage"), object: error.localizedDescription)
-                self.delegate?.fetchedGames()
+                print(error.localizedDescription)
                 return
             }
             
@@ -64,8 +63,7 @@ final class FeedVCViewModel: FeedVCViewModelProtocol {
         Services.getOrderedGames(orderBy: orderBy) { [weak self] games, error in
             guard let self = self else { return }
             if let error = error {
-                NotificationCenter.default.post(name: NSNotification.Name("getOrderedGamesErrorMessage"), object: error.localizedDescription)
-                self.delegate?.fetchedGames()
+                print(error.localizedDescription)
                 return
             }
             
@@ -79,8 +77,7 @@ final class FeedVCViewModel: FeedVCViewModelProtocol {
         Services.searchAllGames(gameName: text) { [weak self] games, error in
             guard let self = self else { return }
             if let error = error {
-                NotificationCenter.default.post(name: NSNotification.Name("searchAllGamesErrorMessage"), object: error.localizedDescription)
-                self.delegate?.fetchedGames()
+                print(error.localizedDescription)
                 return
             }
             self.games = games?.results

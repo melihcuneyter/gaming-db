@@ -22,11 +22,11 @@ final class NewNoteVCViewModel: NewNoteVCViewModelProtocol {
     private var notes = [Note]()
     
     func newNote(obj: NoteModel) {
-        _ = NoteCoreDataManager.shared.saveNote(obj: obj)
+        _ = NoteCoreDataManager.shared.saveNote(noteModel: obj)
     }
     
     
     func editNote(obj:Note, newObj:NoteModel){
-        NoteCoreDataManager.shared.editNote(obj: obj, newObj: newObj)
+        NoteCoreDataManager.shared.editNote(noteModel: obj, newNoteModel: newObj)
     }
 }

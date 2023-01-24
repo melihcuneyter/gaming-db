@@ -54,7 +54,7 @@ final class NotesVCViewModel: NotesVCViewModelProtocol {
     }
     
     func editNote(obj:Note, newObj:NoteModel) {
-        NoteCoreDataManager.shared.editNote(obj: obj,newObj: newObj)
+        NoteCoreDataManager.shared.editNote(noteModel: obj,newNoteModel: newObj)
     }
     
     func getGameId(at index: Int) -> Int? {
