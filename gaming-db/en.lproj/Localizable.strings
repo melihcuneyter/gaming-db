@@ -1,0 +1,46 @@
+/* 
+  Localizable.strings
+  gaming-db
+
+  Created by Melih Cüneyter on 21.01.2023.
+  
+*/
+
+//General
+"delete" = "Delete";
+"fetched_error" = "Game Data Fetch Error";
+"nodata_notes_view" = "You don't have any Notes!";
+"nodata_favorites_view" = "You don't have any Favorite Games!";
+"nodata_feed_view" = "You don't have any Game Data!";
+"error_title" = "Error an occured";
+"ok" = "Ok";
+"empty_error_title" = "Error!";
+"empty_error_desc" = "Fields cannot be left blank!";
+
+//Home
+"feedVC_title" = "Feed";
+"feedVC_searchbar" = "Write something to search..";
+"feedVC_orderByAddedButton" = "Added";
+"feedVC_orderByNameButton" = "Name";
+"feedVC_orderByReleasedButton" = "Release Date";
+"feedVC_orderByARatingButton" = "Rating";
+"feedVC_orderByTitle" = "ORDER BY";
+
+//Details
+"hours" = " hours";
+
+//Favorites
+"favoritesVC_title" = "Favorites";
+"favoritesVC_localNotification_title" = "Deleted your favorite!";
+
+//Notes
+"notesVC_title" = "Notes";
+"notesVC_gameName" = "Title For Note...";
+"notesVC_localNotification_title" = "Note Deleted!";
+"newNotesVC_localNotification_title" = "Succesfully added!";
+
+//NewNoteVC
+"saveButtonTitle" = "Save";
+
+
+

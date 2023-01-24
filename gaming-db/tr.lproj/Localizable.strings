@@ -1,0 +1,43 @@
+/* 
+  Localizable.strings
+  gaming-db
+
+  Created by Melih Cüneyter on 21.01.2023.
+  
+*/
+
+//Genel
+"delete" = "Sil";
+"fetched_error" = "Oyun Datası Indirilemedi";
+"nodata_notes_view" = "Herhangi bir not bulunamadı!";
+"nodata_favorites_view" = "Herhangi bir favori oyun bulunamadı!";
+"nodata_feed_view" = "Herhangi bir oyun verisi bulunamadı!";
+"error_title" = "Bir hata oluştu.";
+"ok" = "Tamam";
+"empty_error_title" = "Hata!";
+"empty_error_desc" = "Alanlar boş bırakılamaz!";
+
+//Anasayfa
+"feedVC_title" = "Oyunlar";
+"feedVC_searchbar" = "Aramak istediğiniz oyunu yazın.";
+"feedVC_orderByAddedButton" = "Eklenme";
+"feedVC_orderByNameButton" = "Isim";
+"feedVC_orderByReleasedButton" = "Yayınlanma";
+"feedVC_orderByARatingButton" = "Oy";
+"feedVC_orderByTitle" = "Sırala";
+
+//Detay Sayfası
+"hours" = " saat";
+
+//Favoriler
+"favoritesVC_title" = "Favoriler";
+"favoritesVC_localNotification_title" = "Favoriniz silindi!";
+
+//Notlar
+"notesVC_title" = "Notlar";
+"notesVC_gameName" = "Not başlığı girin...";
+"notesVC_localNotification_title" = "Adlı notunuz silindi!";
+"newNotesVC_localNotification_title" = "Adlı notunuz başarıyla eklendi!";
+
+//NewNoteVC
+"saveButtonTitle" = "Kaydet";

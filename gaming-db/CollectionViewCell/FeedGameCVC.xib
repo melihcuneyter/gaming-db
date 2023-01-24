@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FeedGameCVC" customModule="gaming_db" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="230" height="260"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="230" height="260"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-6T-79N">
+                        <rect key="frame" x="0.0" y="0.0" width="230" height="260"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="antenna.radiowaves.left.and.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NaP-V1-lQs">
+                                <rect key="frame" x="0.0" y="1.3333333333333357" width="230" height="123.33333333333331"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="126" id="aMc-SC-K1j"/>
+                                    <constraint firstAttribute="width" constant="230" id="nsF-RB-pYF"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKB-nl-roh">
+                                <rect key="frame" x="53" y="134" width="124" height="25"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyk-uv-MQl">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="HxC-hC-J8z"/>
+                                            <constraint firstAttribute="height" constant="25" id="xJ8-ks-6Ii"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="playstation"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WrT-gp-cbq">
+                                        <rect key="frame" x="33" y="0.0" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="vFK-Su-2Ce"/>
+                                            <constraint firstAttribute="height" constant="25" id="yem-7t-wnm"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="xbox" symbolScale="medium"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rt3-fE-xeh">
+                                        <rect key="frame" x="66" y="0.0" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="RE8-7r-n0w"/>
+                                            <constraint firstAttribute="height" constant="25" id="nya-Pv-poF"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="computer" symbolScale="medium"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BoU-q4-zMu">
+                                        <rect key="frame" x="99" y="0.0" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="6wP-cL-MNH"/>
+                                            <constraint firstAttribute="height" constant="25" id="nhC-Zd-BeB"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="nintendo" symbolScale="medium"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sr-0g-8HO">
+                                <rect key="frame" x="8" y="167" width="214" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wax-s6-clF">
+                                <rect key="frame" x="8" y="193" width="214" height="15.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14f-Rv-Bld">
+                                <rect key="frame" x="8.0000000000000018" y="216.66666666666666" width="17.666666666666671" height="22"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="star.fill" catalog="system" symbolScale="small"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Niv-HB-04o">
+                                <rect key="frame" x="33.666666666666664" y="216.66666666666666" width="32.999999999999993" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NaP-V1-lQs" firstAttribute="leading" secondItem="gFy-6T-79N" secondAttribute="leading" id="0gN-jO-uJY"/>
+                            <constraint firstItem="14f-Rv-Bld" firstAttribute="top" secondItem="Wax-s6-clF" secondAttribute="bottom" constant="8" id="2OS-u3-klq"/>
+                            <constraint firstAttribute="trailing" secondItem="NaP-V1-lQs" secondAttribute="trailing" id="FTj-kT-itz"/>
+                            <constraint firstItem="Niv-HB-04o" firstAttribute="top" secondItem="Wax-s6-clF" secondAttribute="bottom" constant="8" id="Gig-rH-Lu8"/>
+                            <constraint firstItem="6sr-0g-8HO" firstAttribute="top" secondItem="OKB-nl-roh" secondAttribute="bottom" constant="8" id="IhU-7S-Eg4"/>
+                            <constraint firstItem="14f-Rv-Bld" firstAttribute="leading" secondItem="gFy-6T-79N" secondAttribute="leading" constant="8" id="QCS-xq-mVi"/>
+                            <constraint firstItem="Wax-s6-clF" firstAttribute="top" secondItem="6sr-0g-8HO" secondAttribute="bottom" constant="8" id="caZ-l3-huP"/>
+                            <constraint firstItem="NaP-V1-lQs" firstAttribute="top" secondItem="gFy-6T-79N" secondAttribute="top" id="cor-U7-zWE"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Niv-HB-04o" secondAttribute="trailing" constant="8" id="dbj-w7-0Ev"/>
+                            <constraint firstAttribute="trailing" secondItem="Wax-s6-clF" secondAttribute="trailing" constant="8" id="g7M-1r-w2K"/>
+                            <constraint firstItem="Niv-HB-04o" firstAttribute="centerY" secondItem="14f-Rv-Bld" secondAttribute="centerY" id="iuu-ig-Pu2"/>
+                            <constraint firstItem="Wax-s6-clF" firstAttribute="leading" secondItem="gFy-6T-79N" secondAttribute="leading" constant="8" id="mW1-Cf-3DT"/>
+                            <constraint firstItem="6sr-0g-8HO" firstAttribute="leading" secondItem="gFy-6T-79N" secondAttribute="leading" constant="8" id="oER-fh-tMp"/>
+                            <constraint firstItem="OKB-nl-roh" firstAttribute="centerX" secondItem="NaP-V1-lQs" secondAttribute="centerX" id="qdx-yM-NXW"/>
+                            <constraint firstAttribute="trailing" secondItem="6sr-0g-8HO" secondAttribute="trailing" constant="8" id="w9v-vB-Rde"/>
+                            <constraint firstItem="OKB-nl-roh" firstAttribute="top" secondItem="NaP-V1-lQs" secondAttribute="bottom" constant="8" id="xD7-4d-7k9"/>
+                            <constraint firstItem="Niv-HB-04o" firstAttribute="leading" secondItem="14f-Rv-Bld" secondAttribute="trailing" constant="8" id="yC2-bE-n2b"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="gFy-6T-79N" secondAttribute="trailing" id="DfQ-of-tku"/>
+                <constraint firstItem="gFy-6T-79N" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Fni-q6-gkD"/>
+                <constraint firstItem="gFy-6T-79N" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jma-zh-zdy"/>
+                <constraint firstAttribute="bottom" secondItem="gFy-6T-79N" secondAttribute="bottom" id="k3h-4o-1tv"/>
+            </constraints>
+            <size key="customSize" width="230" height="259"/>
+            <connections>
+                <outlet property="gameGenresLabel" destination="Wax-s6-clF" id="AFr-3I-hgm"/>
+                <outlet property="gameImageView" destination="NaP-V1-lQs" id="49A-JH-M6I"/>
+                <outlet property="gameNameLabel" destination="6sr-0g-8HO" id="PVX-aC-kEl"/>
+                <outlet property="gameRatingLabel" destination="Niv-HB-04o" id="Tvv-tj-CfU"/>
+                <outlet property="nintendoButton" destination="BoU-q4-zMu" id="zl6-a3-RLD"/>
+                <outlet property="pcButton" destination="rt3-fE-xeh" id="yTE-b1-5jv"/>
+                <outlet property="playstationButton" destination="qyk-uv-MQl" id="rJw-RW-nyB"/>
+                <outlet property="xboxButton" destination="WrT-gp-cbq" id="ZIr-4q-Jfw"/>
+            </connections>
+            <point key="canvasLocation" x="170.99236641221373" y="26.056338028169016"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="antenna.radiowaves.left.and.right" catalog="system" width="128" height="111"/>
+        <image name="computer" width="64" height="64"/>
+        <image name="nintendo" width="64" height="64"/>
+        <image name="playstation" width="64" height="64"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="xbox" width="64" height="64"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
